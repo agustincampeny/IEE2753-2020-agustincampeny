@@ -1,0 +1,41 @@
+$date
+	Sat Mar 21 17:48:38 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module lbshifter_tb $end
+$var wire 8 ! dout [7:0] $end
+$var reg 8 " din [7:0] $end
+$scope module uut $end
+$var wire 8 # din [7:0] $end
+$var wire 8 $ dout [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10
+b1110 !
+b1110 $
+b111 "
+b111 #
+#20
+b11000110 !
+b11000110 $
+b1100011 "
+b1100011 #
+#30
+b11000000 !
+b11000000 $
+b11100000 "
+b11100000 #
+#40

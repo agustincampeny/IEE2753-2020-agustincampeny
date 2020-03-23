@@ -3,12 +3,6 @@ module lbshifter (din, dout);
   input [N-1:0] din;
   output [N-1:0] dout;
 
-  reg [N-1:0] data;
-
-  always @(din) begin
-    data = data << 1;
-  end
-  // Outputs
-  assign dout = data;
+  assign dout = din << 1;
 
 endmodule

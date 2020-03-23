@@ -1,0 +1,60 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-819-g462ee62f)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x7f7fafe00440 .scope module, "lbshifter_tb" "lbshifter_tb" 2 2;
+ .timescale -9 -9;
+P_0x7f7fafe00080 .param/l "N" 0 2 4, +C4<00000000000000000000000000001000>;
+v0x7f7fafd15680_0 .var "din", 7 0;
+v0x7f7fafd15740_0 .net "dout", 7 0, L_0x7f7fafd158f0;  1 drivers
+S_0x7f7fafd00560 .scope module, "uut" "lbshifter" 2 16, 3 1 0, S_0x7f7fafe00440;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "din";
+    .port_info 1 /OUTPUT 8 "dout";
+P_0x7f7fafd01220 .param/l "N" 0 3 2, +C4<00000000000000000000000000001000>;
+v0x7f7fafd04950_0 .net *"_ivl_2", 6 0, L_0x7f7fafd157f0;  1 drivers
+L_0x10c53c008 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x7f7fafd154b0_0 .net *"_ivl_4", 0 0, L_0x10c53c008;  1 drivers
+v0x7f7fafd15550_0 .net "din", 7 0, v0x7f7fafd15680_0;  1 drivers
+v0x7f7fafd155e0_0 .net "dout", 7 0, L_0x7f7fafd158f0;  alias, 1 drivers
+L_0x7f7fafd157f0 .part v0x7f7fafd15680_0, 0, 7;
+L_0x7f7fafd158f0 .concat [ 1 7 0 0], L_0x10c53c008, L_0x7f7fafd157f0;
+    .scope S_0x7f7fafe00440;
+T_0 ;
+    %vpi_call 2 7 "$dumpfile", "lbshifter_tb.vcd" {0 0 0};
+    %vpi_call 2 8 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7f7fafe00440 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x7f7fafe00440;
+T_1 ;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x7f7fafd15680_0, 0, 8;
+    %delay 10, 0;
+    %pushi/vec4 7, 0, 8;
+    %store/vec4 v0x7f7fafd15680_0, 0, 8;
+    %delay 10, 0;
+    %pushi/vec4 99, 0, 8;
+    %store/vec4 v0x7f7fafd15680_0, 0, 8;
+    %delay 10, 0;
+    %pushi/vec4 224, 0, 8;
+    %store/vec4 v0x7f7fafd15680_0, 0, 8;
+    %delay 10, 0;
+    %vpi_call 2 33 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x7f7fafe00440;
+T_2 ;
+    %vpi_call 2 37 "$monitor", "t=%t ns,%d%d", $time, v0x7f7fafd15680_0, v0x7f7fafd15740_0 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "lbshifter_tb.v";
+    "../../rtl/lbshifter/lbshifter.v";

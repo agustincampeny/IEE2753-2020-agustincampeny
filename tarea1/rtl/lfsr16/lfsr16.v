@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Linear-feedback_shift_register
+// https://www.embeddedrelated.com/showarticle/1193.php
 module lfsr16(clk, rst, dout, seed);
   input clk;
   input rst;
@@ -14,7 +16,7 @@ module lfsr16(clk, rst, dout, seed);
     // Shift
     else begin
       data <= data << 1;
-      data[0] <= data[10]^data[12];// Taps
+      data[0] <= data[1]^data[2]^data[4]^data[15];// Taps
     end
   end
   // Outputs

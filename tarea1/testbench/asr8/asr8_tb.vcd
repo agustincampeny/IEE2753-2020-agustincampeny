@@ -1,0 +1,152 @@
+$date
+	Sat Mar 21 19:51:37 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module asr8_tb $end
+$var wire 8 ! dout [7:0] $end
+$var reg 3 " addr [2:0] $end
+$var reg 1 # clk $end
+$var reg 8 $ din [7:0] $end
+$var reg 1 % rst $end
+$scope module uut $end
+$var wire 3 & addr [2:0] $end
+$var wire 1 # clk $end
+$var wire 8 ' din [7:0] $end
+$var wire 1 % rst $end
+$var wire 8 ( dout [7:0] $end
+$var integer 32 ) i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1000 )
+b0 (
+bx '
+b0 &
+0%
+bx $
+0#
+b0 "
+b0 !
+$end
+#5
+b1000 )
+1#
+#10
+0#
+1%
+#15
+bx !
+bx (
+b0 )
+1#
+#20
+0#
+b1 $
+b1 '
+#25
+b1 !
+b1 (
+b0 )
+1#
+#30
+0#
+b10 $
+b10 '
+#35
+b10 !
+b10 (
+b0 )
+1#
+#40
+0#
+b100 $
+b100 '
+#45
+b100 !
+b100 (
+b0 )
+1#
+#50
+0#
+b1000 $
+b1000 '
+#55
+b1000 !
+b1000 (
+b0 )
+1#
+#60
+0#
+b10000 $
+b10000 '
+#65
+b10000 !
+b10000 (
+b0 )
+1#
+#70
+0#
+b100000 $
+b100000 '
+#75
+b100000 !
+b100000 (
+b0 )
+1#
+#80
+0#
+b1000000 $
+b1000000 '
+#85
+b1000000 !
+b1000000 (
+b0 )
+1#
+#90
+b1 !
+b1 (
+0#
+b110 "
+b110 &
+#95
+b10 !
+b10 (
+b0 )
+1#
+#100
+0#
+#105
+b100 !
+b100 (
+b0 )
+1#
+#110
+0#
+#115
+b1000 !
+b1000 (
+b0 )
+1#
+#120
+0#
+#125
+b10000 !
+b10000 (
+b0 )
+1#
+#130
+0#
+#135
+b100000 !
+b100000 (
+b0 )
+1#
+#140
+0#
