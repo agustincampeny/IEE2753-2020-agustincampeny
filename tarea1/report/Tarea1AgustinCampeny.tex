@@ -84,7 +84,7 @@ Se utiliza el software \emph{Icarus Verilog} para la compilación y simulación 
 
 \subsection{Left Barrel Shifter}
 
-Este módulo realiza la operación shift left de manera completamente combinacional. Se implementa un módulo de largo variable definido por el parámetro \texttt{N}. A continuación se presentan formas de onda para varias entradas.
+Este módulo realiza la operación shift left de manera completamente combinacional. La implementación se encuentra basada en un documento por Matthew Rudolf Pillmeier\footnote{Barrel shifter design, optimization, and analysis, 2001}. Se implementa un módulo de largo variable definido por el parámetro \texttt{N}. A continuación se presentan formas de onda para varias entradas.
 
 \begin{figure}[H]
   \centering
@@ -130,7 +130,7 @@ Al ser un LFSR de largo 16 bits, el periodo máximo es de 65535 valores diferent
 
 \subsection{Multiplier accumulator}
 
-Este módulo multiplica los valores en sus entradas, y guarda el valor de la operación en un acumulador, el que corresponde a la salida de este. En los ciclos siguientes el valor del acumulador corresponde al valor anterior sumado al resultado de la multiplicación en dicho ciclo. Cada 8 ciclos se reinicia el valor del acumulador.
+Este módulo multiplica los valores en sus entradas, y guarda el valor de la operación en un acumulador, el que corresponde a la salida de este\footnote{\url{https://en.wikipedia.org/wiki/Multiply–accumulate_operation}}. En los ciclos siguientes el valor del acumulador corresponde al valor anterior sumado al resultado de la multiplicación en dicho ciclo. Cada 8 ciclos se reinicia el valor del acumulador.
 
 A continuación se presentan las formas de onda en donde se aprecia el valor del acunulador, y su reinicio en el ciclo 8.
 
