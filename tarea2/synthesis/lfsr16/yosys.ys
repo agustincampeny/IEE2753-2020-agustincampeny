@@ -1,0 +1,13 @@
+# read design
+read_verilog ../../rtl/lfsr16/lfsr16.v
+
+# generic synthesis
+synth -top lfsr16
+
+# mapping to osu05_stdcells.lib
+dfflibmap -liberty osu05_stdcells.lib
+abc -liberty osu05_stdcells.lib
+clean
+
+# write synthesized design
+write_verilog synth.v

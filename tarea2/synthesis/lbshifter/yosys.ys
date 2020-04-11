@@ -1,0 +1,13 @@
+# read design
+read_verilog ../../rtl/lbshifter/lbshifter.v
+
+# generic synthesis
+synth -top lbshifter
+
+# mapping to osu05_stdcells.lib
+dfflibmap -liberty osu05_stdcells.lib
+abc -liberty osu05_stdcells.lib
+clean
+
+# write synthesized design
+write_verilog synth.v

@@ -1,0 +1,13 @@
+# read design
+read_verilog ../../rtl/mac8/mac8.v
+
+# generic synthesis
+synth -top mac8
+
+# mapping to osu05_stdcells.lib
+dfflibmap -liberty osu05_stdcells.lib
+abc -liberty osu05_stdcells.lib
+clean
+
+# write synthesized design
+write_verilog synth.v

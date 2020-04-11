@@ -1,0 +1,13 @@
+# read design
+read_verilog ../../rtl/f_addr/full_adder.v
+
+# generic synthesis
+synth -top f_addr
+
+# mapping to osu05_stdcells.lib
+dfflibmap -liberty osu05_stdcells.lib
+abc -liberty osu05_stdcells.lib
+clean
+
+# write synthesized design
+write_verilog synth.v

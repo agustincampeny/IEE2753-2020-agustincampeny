@@ -1,0 +1,68 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-819-g462ee62f)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+S_0x7ff898d01150 .scope module, "mac8" "mac8" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 8 "din0";
+    .port_info 3 /INPUT 8 "din1";
+    .port_info 4 /OUTPUT 16 "dout";
+L_0x7ff898e05e60 .functor BUFZ 16, v0x7ff898d04960_0, C4<0000000000000000>, C4<0000000000000000>, C4<0000000000000000>;
+v0x7ff898d04960_0 .var "accumulator", 15 0;
+o0x108f58038 .functor BUFZ 1, C4<z>; HiZ drive
+v0x7ff898e05980_0 .net "clk", 0 0, o0x108f58038;  0 drivers
+v0x7ff898e05a30_0 .var "counter", 3 0;
+o0x108f58098 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x7ff898e05af0_0 .net "din0", 7 0, o0x108f58098;  0 drivers
+o0x108f580c8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x7ff898e05ba0_0 .net "din1", 7 0, o0x108f580c8;  0 drivers
+v0x7ff898e05c90_0 .net "dout", 15 0, L_0x7ff898e05e60;  1 drivers
+o0x108f58128 .functor BUFZ 1, C4<z>; HiZ drive
+v0x7ff898e05d40_0 .net "rst", 0 0, o0x108f58128;  0 drivers
+E_0x7ff898d04a90/0 .event negedge, v0x7ff898e05d40_0;
+E_0x7ff898d04a90/1 .event posedge, v0x7ff898e05980_0;
+E_0x7ff898d04a90 .event/or E_0x7ff898d04a90/0, E_0x7ff898d04a90/1;
+    .scope S_0x7ff898d01150;
+T_0 ;
+    %wait E_0x7ff898d04a90;
+    %load/vec4 v0x7ff898e05d40_0;
+    %inv;
+    %flag_set/vec4 8;
+    %load/vec4 v0x7ff898e05a30_0;
+    %pad/u 32;
+    %cmpi/u 7, 0, 32;
+    %flag_inv 5; GE is !LT
+    %flag_or 5, 8;
+    %jmp/0xz  T_0.0, 5;
+    %pushi/vec4 0, 0, 4;
+    %assign/vec4 v0x7ff898e05a30_0, 0;
+    %pushi/vec4 0, 0, 16;
+    %assign/vec4 v0x7ff898d04960_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x7ff898e05a30_0;
+    %addi 1, 0, 4;
+    %store/vec4 v0x7ff898e05a30_0, 0, 4;
+    %load/vec4 v0x7ff898d04960_0;
+    %load/vec4 v0x7ff898e05af0_0;
+    %pad/u 16;
+    %load/vec4 v0x7ff898e05ba0_0;
+    %pad/u 16;
+    %mul;
+    %add;
+    %assign/vec4 v0x7ff898d04960_0, 0;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "mac8/mac8.v";
