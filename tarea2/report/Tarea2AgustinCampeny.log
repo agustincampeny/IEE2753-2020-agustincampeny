@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.4.6)  9 APR 2020 01:14
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.4.6)  10 APR 2020 21:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -654,11 +654,11 @@ Overfull \hbox (7.90454pt too wide) in paragraph at lines 18--18
  []
 
 )
-LaTeX Info: Redefining \. on input line 167.
-LaTeX Info: Redefining \% on input line 167.
+LaTeX Info: Redefining \. on input line 166.
+LaTeX Info: Redefining \% on input line 166.
  [4]
-LaTeX Info: Redefining \. on input line 213.
-LaTeX Info: Redefining \% on input line 213.
+LaTeX Info: Redefining \. on input line 209.
+LaTeX Info: Redefining \% on input line 209.
  [5]
 LaTeX Info: Redefining \. on input line 257.
 LaTeX Info: Redefining \% on input line 257.
@@ -667,10 +667,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 260--260
 [][][][]$[][][][][] [] [] [] [][][] [] [][][][][][] [] [][][] [] [] [] [][][][][] [] [][][][][][][][] [] [][][][][][] [] [][][][][] [] [][][][] [] [][][][][][][][][][][][] [] [][][][] [] [][][][][][][] []
  []
 
+LaTeX Info: Redefining \. on input line 297.
+LaTeX Info: Redefining \% on input line 297.
+[7]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 299.
 LaTeX Info: Redefining \. on input line 299.
 LaTeX Info: Redefining \% on input line 299.
-[7]
+ [8]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 299.
  (./Tarea2AgustinCampeny.aux
 LaTeX Info: Redefining \. on input line 25.
@@ -689,6 +692,6 @@ Here is how much of TeX's memory you used:
  19503 multiletter control sequences out of 15000+600000
  14975 words of font info for 73 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 39i,12n,45p,944b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,11n,45p,944b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Tarea2AgustinCampeny.xdv (7 pages, 106724 bytes).
+Output written on Tarea2AgustinCampeny.xdv (8 pages, 109248 bytes).

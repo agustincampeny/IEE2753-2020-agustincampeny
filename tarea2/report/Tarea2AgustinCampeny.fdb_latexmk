@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1586409297 "Tarea2AgustinCampeny.xdv" "Tarea2AgustinCampeny.pdf" "Tarea2AgustinCampeny" 1586409298
-  "Tarea2AgustinCampeny.xdv" 1586409297 106724 f26cf684684374c15f2128ddcaaa3ab5 "xelatex"
+["xdvipdfmx"] 1586568406 "Tarea2AgustinCampeny.xdv" "Tarea2AgustinCampeny.pdf" "Tarea2AgustinCampeny" 1586568408
+  "Tarea2AgustinCampeny.xdv" 1586568406 109248 c6538a7de1ce59f22114b74ca4b7bd19 "xelatex"
   (generated)
   "Tarea2AgustinCampeny.pdf"
-["xelatex"] 1586409296 "Tarea2AgustinCampeny.tex" "Tarea2AgustinCampeny.xdv" "Tarea2AgustinCampeny" 1586409298
+["xelatex"] 1586568406 "Tarea2AgustinCampeny.tex" "Tarea2AgustinCampeny.xdv" "Tarea2AgustinCampeny" 1586568408
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -122,17 +122,17 @@
   "/usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf" 1570742662 39452 758acee3f2beaeeedff570c5f5d76d98 ""
   "/usr/local/texlive/2019/texmf-var/web2c/xetex/xelatex.fmt" 1586227133 2522618 9863550aba088180950ee765a33b1078 ""
   "/usr/local/texlive/2019/texmf.cnf" 1568480916 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "Tarea2AgustinCampeny.aux" 1586409297 2303 0f7864ae7596eeda805f53fd1639a6b2 "xelatex"
-  "Tarea2AgustinCampeny.out" 1586409297 368 81aeccdd3ef8d0e7eb50e47a6e98ee92 "xelatex"
-  "Tarea2AgustinCampeny.tex" 1586409295 14454 31d24c1ce5523ec427f3dfd3a3d865e4 ""
+  "Tarea2AgustinCampeny.aux" 1586568406 2303 a09d44d4a6c9dbe506429830b92d0b07 "xelatex"
+  "Tarea2AgustinCampeny.out" 1586568406 368 81aeccdd3ef8d0e7eb50e47a6e98ee92 "xelatex"
+  "Tarea2AgustinCampeny.tex" 1586568404 14637 5b7605d150a03912ca4614f35ebca5c1 ""
   "full_adder.eps" 1586319677 15590 29e1de61bfe245609d00ec5b12a4ff3a ""
   "logo.pdf" 1282103448 84133 1ef088c91a7e1ec9843018741a6a0f34 ""
   "nand_stick.eps" 1586315247 11143 b918c9c0243ef9f5809620b098ac3313 ""
   "synth_out.eps" 1586409169 12644 005ab3378efae2c52d513b6f954c335a ""
-  "synth_out.tex" 1586409169 843 7569e50f10604a41e96d962b80546eff ""
+  "synth_out.tex" 1586520530 843 7569e50f10604a41e96d962b80546eff ""
   "xor_stick.eps" 1586316492 12487 b1f46393cd4c0bf4eb75314721d68333 ""
   (generated)
   "Tarea2AgustinCampeny.out"
-  "Tarea2AgustinCampeny.xdv"
-  "Tarea2AgustinCampeny.aux"
   "Tarea2AgustinCampeny.log"
+  "Tarea2AgustinCampeny.aux"
+  "Tarea2AgustinCampeny.xdv"
