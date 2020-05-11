@@ -1,0 +1,78 @@
+// https://www.fpga4fun.com/SPI2.html
+// N bits SPI receiver, Mode 0.
+//
+// ss = 1;
+// #10
+// Reception doesn't end until N bits are received. This enables receiving
+// separate bytes.
+module spi(clk, mosi, sck, ss, rst, dout, rxend);
+  parameter N = 16;
+  input clk;
+  input mosi;
+  input sck;
+  input ss;
+  input rst;
+  output [N-1:0] dout;
+  output reg rxend;
+
+  reg [N-1:0] shiftreg;
+  reg [N-1:0] counter;
+  reg [2:0] sckreg;
+  reg [2:0] ssreg;
+  wire sck_rising;
+  wire ss_rising;
+  wire ss_falling;
+
+  // Sync with clk
+  always @(posedge clk) begin
+    sckreg <= {sckreg[1:0], sck};
+    ssreg  <= {ssreg[1:0], ss};
+  end
+
+  assign sck_rising  = (sckreg[2:1] == 2'b01);
+  assign sck_falling = (sckreg[2:1] == 2'b10);
+  assign ss_rising   = (ssreg[2:1] == 2'b01);
+  assign ss_falling  = (ssreg[2:1] == 2'b10);
+
+  // Main
+  always @(posedge clk or rst) begin
+    if (rst) begin
+      shiftreg <= 0;
+      counter <= 0;
+      rxend <= 0;
+    end
+    // Receiving mode
+    else if (!ss) begin
+      // RX starting
+      if (ss_falling & rxend) begin
+        shiftreg <= 0;
+        counter <= 0;
+        rxend <= 0;
+      end
+      // RX ended
+      else if (rxend);
+      // Sample bit
+      else if (sck_rising) begin
+        shiftreg[0] <= mosi;
+        counter = counter + 1;
+      end
+      // Shift
+      else if (sck_falling) begin
+        shiftreg = shiftreg << 1;
+        if (counter == N) begin
+          rxend <= 1;
+        end
+      end
+    end
+
+    // IDLE mode
+    else if (ss) begin
+      if (ss_rising) begin
+      end
+    end
+  end
+
+assign dout = shiftreg;
+
+
+endmodule
