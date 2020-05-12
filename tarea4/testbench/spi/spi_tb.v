@@ -1,6 +1,5 @@
 `timescale 1ns/1ns
 module spi_tb();
-
 parameter N = 16;
 
 initial begin

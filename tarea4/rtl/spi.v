@@ -37,7 +37,7 @@ module spi(clk, mosi, sck, ss, rst, dout, rxend);
   assign ss_falling  = (ssreg[2:1] == 2'b10);
 
   // Main
-  always @(posedge clk or rst) begin
+  always @(posedge clk) begin
     if (~rst) begin
       shiftreg <= 0;
       counter <= 0;
@@ -46,10 +46,11 @@ module spi(clk, mosi, sck, ss, rst, dout, rxend);
     // Receiving mode
     else if (!ss) begin
       // RX starting
-      if (ss_falling & rxend) begin
+      if (ss_falling & halt) begin
         shiftreg <= 0;
         counter <= 0;
         rxend <= 0;
+        halt <= 0;
       end
       // RX ended
       else if (halt) begin
@@ -57,15 +58,17 @@ module spi(clk, mosi, sck, ss, rst, dout, rxend);
       end
       // Sample bit
       else if (sck_rising) begin
-        shiftreg[0] <= mosi;
+        shiftreg[N-1] <= mosi;
         counter = counter + 1;
       end
       // Shift
       else if (sck_falling) begin
-        shiftreg = shiftreg << 1;
         if (counter == N) begin
           halt <= 1;
           rxend <= 1;
+        end
+        else begin
+          shiftreg = shiftreg >> 1;
         end
       end
     end

@@ -11,10 +11,9 @@ module mult(clk, din1, din2, start, rst, dout, ovf, ready);
 
   reg [2*N-1:0] result;
 
-  always @(posedge clk) begin
+  always @(posedge clk or rst) begin
     if (~rst) begin
       result <= 0;
-      ready <= 0;
     end
     else if (ready) begin
       ready <= 0;
