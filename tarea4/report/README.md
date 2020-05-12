@@ -27,6 +27,8 @@ La señal de reset tiene el efecto de resetear los registros *digit1* y *digit2*
 
 ## Diagrama de bloques
 
+![initPre](./spimult.png)
+
 ## Simulación pre-síntesis
 
 Se presentan las formas de onda resultantes de la simulación del módulo. La simulación consiste en la aplicación de la señal reset, y luego enviar mediante SPI los dígitos del enunciado, y se observa el resultado de la multiplicación para cada par de dígitos.
