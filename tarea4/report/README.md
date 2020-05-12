@@ -33,23 +33,23 @@ Se presentan las formas de onda resultantes de la simulación del módulo. La si
 
 ### Inicialización
 
-![initPre](../testbench/top/initial.pdf)
+![initPre](../testbench/top/initial.png)
 
 ### Resultado de 7x15
 
-![res1Pre](../testbench/top/result1.pdf)
+![res1Pre](../testbench/top/result1.png)
 
 ### Resultado de 25x5
 
-![res1Pre](../testbench/top/result2.pdf)
+![res1Pre](../testbench/top/result2.png)
 
 ### Resultado de 17x33
 
-![res1Pre](../testbench/top/result3.pdf)
+![res1Pre](../testbench/top/result3.png)
 
 ### Nueva recepción SPI
 
-![res1Pre](../testbench/top/spi_reset.pdf)
+![res1Pre](../testbench/top/spi_reset.png)
 
 ## Simulación post-síntesis
 
@@ -57,21 +57,21 @@ Al igual que en el item anterior, se utiliza el mismo archivo de *testbench*, pe
 
 ### Inicialización
 
-![res1Pre](../synthesis/initial.pdf)
+![res1Pre](../synthesis/initial.png)
 
 ### Resultado de 7x15
 
-![res1Pre](../synthesis/result1.pdf)
+![res1Pre](../synthesis/result1.png)
 
 ### Resultado de 25x5
 
-![res1Pre](../synthesis/result2.pdf)
+![res1Pre](../synthesis/result2.png)
 
 ### Resultado de 17x33
 
-![res1Pre](../synthesis/result3.pdf)
+![res1Pre](../synthesis/result3.png)
 
 ### Nueva recepción SPI
 
-![res1Pre](../synthesis/spi_reset.pdf)
+![res1Pre](../synthesis/spi_reset.png)
 
