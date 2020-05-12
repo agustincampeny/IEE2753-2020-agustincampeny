@@ -43,7 +43,7 @@ initial begin
   mosi = 0;
   sck = 0;
   ss = 1;
-  #6;
+  #10;
 
   rst = 1;
   #2;

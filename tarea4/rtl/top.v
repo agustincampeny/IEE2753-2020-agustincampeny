@@ -11,8 +11,8 @@ module top(clk, rst, mosi, ss, sck, dout, ready, ovf);
 
   wire [2*N-1:0] spi_out;
   wire rxend;
-  reg [N-1:0] digit1 = 0;
-  reg [N-1:0] digit2 = 0;
+  reg [N-1:0] digit1;
+  reg [N-1:0] digit2;
   reg delay = 0;
   reg start = 0;
 
@@ -38,23 +38,23 @@ module top(clk, rst, mosi, ss, sck, dout, ready, ovf);
     );
 
   always @(posedge clk) begin
-    if (rst) begin
+    if (~rst) begin
       digit1 <= 0;
       digit2 <= 0;
       delay <= 0;
       start <= 0;
     end
-    if (rxend) begin
-      digit1 <= spi_out[N-1:0];
-      digit2 <= spi_out[2*N-1:N];
-      delay <= 1;
+    else if (start) begin
+      start <= 0;
     end
     else if (delay) begin
       start <= 1;
       delay <= 0;
     end
-    else if (start) begin
-      start <= 0;
+    else if (rxend) begin
+      digit1 <= spi_out[N-1:0];
+      digit2 <= spi_out[2*N-1:N];
+      delay <= 1;
     end
   end
 
