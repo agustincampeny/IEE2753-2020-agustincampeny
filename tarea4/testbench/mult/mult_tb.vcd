@@ -1,0 +1,94 @@
+$date
+	Mon May 11 22:54:29 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module mult_tb $end
+$var wire 1 ! ready $end
+$var wire 1 " ovf $end
+$var wire 8 # dout [7:0] $end
+$var reg 1 $ clk $end
+$var reg 8 % din1 [7:0] $end
+$var reg 8 & din2 [7:0] $end
+$var reg 1 ' rst $end
+$var reg 1 ( start $end
+$scope module uut $end
+$var wire 1 $ clk $end
+$var wire 8 ) din1 [7:0] $end
+$var wire 8 * din2 [7:0] $end
+$var wire 1 ' rst $end
+$var wire 1 ( start $end
+$var wire 1 " ovf $end
+$var wire 8 + dout [7:0] $end
+$var reg 8 , digit1 [7:0] $end
+$var reg 8 - digit2 [7:0] $end
+$var reg 1 ! ready $end
+$var reg 16 . result [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 .
+b0 -
+b0 ,
+b0 +
+b11 *
+b1001 )
+0(
+0'
+b11 &
+b1001 %
+0$
+b0 #
+0"
+x!
+$end
+#5
+1$
+#10
+0$
+1'
+#15
+1$
+#20
+0$
+1(
+#25
+b11011 #
+b11011 +
+1!
+b11011 .
+1$
+#30
+0$
+0(
+#35
+0!
+1$
+#40
+0$
+1(
+b110 &
+b110 *
+b110010 %
+b110010 )
+#45
+b11111111 #
+b11111111 +
+1"
+1!
+b100101100 .
+1$
+#50
+0$
+0(
+#55
+0!
+1$
+#60
+0$

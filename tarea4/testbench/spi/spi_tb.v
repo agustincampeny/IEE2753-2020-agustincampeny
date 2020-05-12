@@ -39,13 +39,13 @@ always #1 clk = ~clk;
 
 initial begin
 
-  rst = 1;
+  rst = 0;
   mosi = 0;
   sck = 0;
   ss = 1;
   #2;
 
-  rst = 0;
+  rst = 1;
   #2;
 
   ss = 0;
