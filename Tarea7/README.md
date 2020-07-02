@@ -26,11 +26,11 @@ loop:
 En la siguiente forma de onda es posible notar el funcionamiento general del programa, especialmente el OpCode, los estados del módulo de control, el Program Counter y los registros `$t0` y `$t1`. A los 43 ns finaliza la instrucción **j**, lo que es representado por el cambio en el PC.
 
 
-![initPre](./iverilog/fib_detail.pdf)
+![initPre](./iverilog/fib_detail.png)
 
 La siguiente imagen tiene una menor escala de tiempo, y es posible observar los valores de Fibonacci en los registros correspondientes.
 
-![initPre](./iverilog/fib_general.pdf)
+![initPre](./iverilog/fib_general.png)
 
 ### Operaciones básicas y memoria: **lw**, **sw** y R-type
 
@@ -62,9 +62,9 @@ mem_contents:
 
 A continuación se presentan las formas de onda, en las que se muestra el contenido de los registros relevantes y así es posible notar el resultado de las operaciones.
 
-![initPre](./iverilog/oper_1.pdf)
+![initPre](./iverilog/oper_1.png)
 
-![initPre](./iverilog/oper_2.pdf)
+![initPre](./iverilog/oper_2.png)
 
 
 
