@@ -1,0 +1,116 @@
+%! TEX program = xelatex
+% Paquetes:
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[spanish]{babel} %%Paquete español para mac
+\usepackage{graphicx} %% Para incluir figuras
+\usepackage{xcolor}
+\usepackage{ifpdf}
+\usepackage{circledsteps}
+\DeclareGraphicsExtensions{.pdf}
+\usepackage[margin=1in]{geometry}
+\setcounter{totalnumber}{5}
+\renewcommand{\textfraction}{0.1}
+\usepackage[cmex10]{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{cite}
+\bibliographystyle{unsrt}
+%\decimalpoint
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{colorlinks=false,bookmarksopen=true,linkbordercolor={1 1 1}}
+\usepackage{mathtools}
+\usepackage{chngcntr}
+\usepackage{enumitem}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\usepackage[parfill]{parskip} % Líneas en lugar de indentación
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{cleveref}
+\usepackage{verbatimbox}
+\crefformat{footnote}{#2\footnotemark[#1]#3}
+
+\usepackage[squaren]{SIunits} %esto me da nombres de unidades y prefijos
+\usepackage{sistyle}% Esto es adecuado para escribir unidades.
+
+\newcommand{\alumno}{Agustín Campeny}
+\lhead{\nouppercase{\leftmark}}
+\rhead{Tarea 6 - \alumno}
+\pagestyle{fancy}
+%\usepackage{scrextend}
+\numberwithin{equation}{section}
+
+\setlength{\tabcolsep}{6pt} % General space between cols (6pt standard)
+\renewcommand{\arraystretch}{0.8} % General space between rows (1 standard)
+\begin{document}
+\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% ENCABEZADO %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace*{-1cm}
+\includegraphics[width=2cm]{logo.pdf}
+\vspace*{-2.2cm}
+
+\hspace*{2cm}
+ \begin{tabular}{l}
+  {\ \textsc{\raggedright \footnotesize Pontificia Universidad Católica de Chile}}\\
+  {\ \textsc{\raggedright \footnotesize Escuela de Ingeniería}}\\
+  {\ \textsc{\raggedright \footnotesize Departamento de Ingeniería Eléctrica}}\\
+  {\ \textsc{\raggedright \footnotesize IEE2753 - Diseño de Circuitos Integrados Digitales}}\\
+  {\  }\\
+ \end{tabular}
+ \hfill
+\vspace*{-0.2cm}
+\begin{center}
+  {\Large\bf Tarea 6}\\
+\vspace*{2mm}
+{\today}\\
+\vspace*{2mm}
+{\footnotesize \alumno}\\
+\vspace*{6mm}
+\end{center}
+\hrule\vspace*{2pt}\hrule
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% ENCABEZADO %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Factor de actividad}
+
+\subsection{}
+
+Para este ejercicio se calcula la probabilidad para cada nodo, y luego su factor de actividad, definido como \(\alpha = P_i\overline{P_i}\).
+
+\begin{itemize}
+  \item \(n_0\): Como la probabilidad de todas las entradas del circuito son de 0.5, y la probabilidad de una puerta NAND2 es de \(P_{\text{NAND2}} = 1-P_AP_B\), la probabilidad \(P_{n_0} = 0.75\), y el factor de actividad \(\alpha_{n_0} = 0.1875\).
+
+  \item \(n_1\): El inversor solo invierte la probabilidad del nodo de entrada, pero no modifica el factor de actividad, por lo tanto \(P_{n_1} = 0.25\) y \(\alpha_{n_1} = 0.1875\).
+
+  \item \(n_2\): Se utiliza la probabilidad de \(n_1\) y de la nueva entrada. El valor \(P_{n_2} = 0.875\) y \(\alpha_{n_2} = 0.109375\).
+
+  \item \(n_3\): Este nodo es idéntico a \(n_2\), por lo tanto \(P_{n_3} = 0.875\) y \(\alpha_{n_3} = 0.109375\).
+\end{itemize}
+
+\subsection{}
+
+Despreciando la potencia interna, se define la potencia dinámica como la suma de las potencias de switching en las entradas de cada compuerta y en la capacitancia de carga. De esta forma:
+
+\begin{equation}
+  P_{\text{dynamic}} = \left( 0.5 C_{in} + 0.1875 C_{1} + 0.875 C_2 + 0.21875 C_{Load}\right) V_{DD}^2 f
+\end{equation}
+
+\section{Low Power Placement}
+
+Se quiere minimizar el factor de actividad en los nodos con capacitores. Para esto primero se determina el valor del factor de actividad con respecto a las entradas:
+
+\begin{align}
+  \alpha_{1} &= (1-\overline{P_{in1}}\overline{P_{in2}})\cdot \overline{P_{in1}}\overline{P_{in2}} \\
+  \alpha_{2} &= (1-\overline{P_{int}}\overline{P_{in3}})\cdot \overline{P_{int}}\overline{P_{in3}} \\
+\end{align}
+
+Como el nodo de salida es una función de las tres entradas, su factor de actividad es el mismo sin importar el orden de estas. Se busca entonces minimizar \(\alpha_1\).
+
+El orden que minimiza este valor es \(P_{in1} = 0.1\) y \(P_{in2} = 0.2\), correspondiendo a un factor de actividad \(\alpha_{1}^{\text{min}} = 0.0196 \).
+
+El orden que maximiza este valor es \(P_{in1} = 0.2\) y \(P_{in2} = 0.5\), correspondiendo a un factor de actividad \(\alpha_{1}^{\text{min}} = 0.09 \).
+
+\end{document}

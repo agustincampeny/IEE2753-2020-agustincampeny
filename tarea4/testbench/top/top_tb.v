@@ -2,7 +2,6 @@
 module top_tb();
 parameter N = 8;
 
-
 initial begin
   $dumpfile("top_tb.vcd");
   $dumpvars(0, top_tb);

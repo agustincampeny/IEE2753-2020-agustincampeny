@@ -1,0 +1,45 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Thu Jul  2 08:06:10 2020
+[*]
+[dumpfile] "/Users/agustincampenyscolari/Desktop/IEE2753/IEE2753-2020-agustincampeny/Tarea7/testbench/mips_tb.vcd"
+[dumpfile_mtime] "Thu Jul  2 07:36:23 2020"
+[dumpfile_size] 205024
+[savefile] "/Users/agustincampenyscolari/Desktop/IEE2753/IEE2753-2020-agustincampeny/Tarea7/testbench/simu.gtkw"
+[timestart] 62
+[size] 1280 657
+[pos] -1 -1
+*-4.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] mips_tb.
+[treeopen] mips_tb.mips_uut.
+[treeopen] mips_tb.mips_uut.datapath_1.regfile_1.genblk1[16].
+[treeopen] mips_tb.mips_uut.datapath_1.regfile_1.genblk1[17].
+[treeopen] mips_tb.mips_uut.datapath_1.regfile_1.genblk1[18].
+[treeopen] mips_tb.mips_uut.datapath_1.regfile_1.genblk1[19].
+[treeopen] mips_tb.mips_uut.datapath_1.regfile_1.genblk1[20].
+[treeopen] mips_tb.mips_uut.datapath_1.regfile_1.genblk1[8].
+[treeopen] mips_tb.mips_uut.datapath_1.regfile_1.genblk1[9].
+[sst_width] 193
+[signals_width] 193
+[sst_expanded] 1
+[sst_vpaned_height] 187
+@28
+mips_tb.rst
+mips_tb.clk
+@22
+mips_tb.mips_uut.datapath_1.pc[31:0]
+mips_tb.mips_uut.datapath_1.memoryAddress[31:0]
+mips_tb.mips_uut.op[5:0]
+mips_tb.mips_uut.control_1.state[3:0]
+mips_tb.mips_uut.aluControl_1.ALUControl[3:0]
+@420
++{$t0} mips_tb.mips_uut.datapath_1.regfile_1.genblk1[8].reginst.dout[31:0]
++{$t1} mips_tb.mips_uut.datapath_1.regfile_1.genblk1[9].reginst.dout[31:0]
++{$s0} mips_tb.mips_uut.datapath_1.regfile_1.genblk1[16].reginst.dout[31:0]
++{$s1} mips_tb.mips_uut.datapath_1.regfile_1.genblk1[17].reginst.dout[31:0]
++{$s2} mips_tb.mips_uut.datapath_1.regfile_1.genblk1[18].reginst.dout[31:0]
++{$s3} mips_tb.mips_uut.datapath_1.regfile_1.genblk1[19].reginst.dout[31:0]
+@421
++{$s4} mips_tb.mips_uut.datapath_1.regfile_1.genblk1[20].reginst.dout[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

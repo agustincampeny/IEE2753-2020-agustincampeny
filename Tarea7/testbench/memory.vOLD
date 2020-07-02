@@ -1,0 +1,34 @@
+// https://stackoverflow.com/questions/36610527/how-to-initialize-contents-of-inferred-block-ram-bram-in-verilog
+module memory(clk, rst, memoryWrite, memoryRead, memoryWriteData,
+              memoryAddress, memoryOutData);
+parameter N = 32;
+parameter L = 16384; // 64kB
+parameter MEM_INIT_FILE = "";
+input clk, rst, memoryWrite, memoryRead;
+input [N-1:0] memoryWriteData, memoryAddress;
+output reg [N-1:0] memoryOutData;
+
+reg [L-1:0] memEn;
+wire [N-1:0] memOut [L-1:0];
+
+genvar i;
+generate
+  for (i = 0; i < L; i = i + 1) begin
+    register #(.N(N), .MEM_INIT_FILE(MEM_INIT_FILE), .DIR(i))
+      memDir(.din(memoryWriteData),
+             .clk(clk),
+             .en(memEn[i]),
+             .rst(rst),
+             .dout(memOut[i])
+      );
+  end
+endgenerate
+
+always @ (*) begin
+  memEn         = 1'b0;
+  memoryOutData = 1'b0;
+  if (memoryWrite) memEn[memoryAddress >> 2] = 1'b1;
+  else memoryOutData = memOut[memoryAddress >> 2];
+end
+
+endmodule
