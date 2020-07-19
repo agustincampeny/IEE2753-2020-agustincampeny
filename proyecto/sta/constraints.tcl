@@ -1,6 +1,7 @@
 read_liberty osu018_stdcells.lib
-read_verilog ../synthesis/synth.v
+read_verilog ./mips.rtlnopwr.v
 link_design mips
+read_sdc mips.sdc
 set period 10
 set dfactor 10
 create_clock -name clk -period $period {clk}
