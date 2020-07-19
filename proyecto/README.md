@@ -133,8 +133,8 @@ Se presenta a continuación algunas imágenes del layout resultante utilizando e
 
 #### Layout con menos capas activas
 
-![lessLayers](./qflow_project/layout/pic1.png)
+![lessLayers](./qflow_project/layout/pic2.png)
 
 #### Zoom a una sección del Layout
 
-![zoomin](./qflow_project/layout/pic1.png)
+![zoomin](./qflow_project/layout/pic3.png)
