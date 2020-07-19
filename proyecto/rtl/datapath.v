@@ -24,8 +24,12 @@ output ALUOverflow, ALUZero;
 
 wire [N-1:0] pc, pc_next;
 
+always @(clk) reg_pc_clk_en <= PCEn;
+wire reg_pc_clk;
+assign reg_pc_clk = reg_pc_clk_en & clk;
+
 register reg_pc(.din(pc_next),
-                .clk(clk),
+                .clk(reg_pc_clk),
                 .en(PCEn),
                 .rst(rst),
                 .dout(pc)
@@ -35,12 +39,17 @@ register reg_pc(.din(pc_next),
 
 wire [N-1:0] Data;
 
+always @(clk) reg_Instr_clk_en <= IRWrite;
+wire reg_Instr_clk;
+assign reg_Instr_clk = reg_Instr_clk_en & clk;
+
 register reg_Instr(.din(memoryOutData),
-                   .clk(clk),
+                   .clk(reg_Instr_clk),
                    .en(IRWrite),
                    .rst(rst),
                    .dout(instruction)
          );
+
 
 register reg_Data(.din(memoryOutData),
                   .clk(clk),

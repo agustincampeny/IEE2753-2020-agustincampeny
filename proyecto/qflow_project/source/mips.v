@@ -1,5 +1,17 @@
 /* MIPS multiciclo de 32 bits
 */
+`include "alu.v"
+`include "aluControl.v"
+`include "control.v"
+`include "datapath.v"
+`include "mux2to1.v"
+`include "mux4to1.v"
+`include "nextPCLogic.v"
+`include "regfile.v"
+`include "register.v"
+`include "shiftLeft32.v"
+`include "signExtend.v"
+
 module mips(clk, rst, memoryOutData, memoryAddress, MemWrite, MemRead, memoryWriteData);
 parameter N = 32;
 input clk, rst;

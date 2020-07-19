@@ -1,0 +1,37 @@
+Qflow static timing analysis logfile created on Sun Jul 19 07:20:39 EDT 2020
+Creating OpenSTA input file mips.conf
+Running OpenSTA static timing analysis
+sta  < mips.conf
+OpenSTA 2.2.0 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Warning: /usr/local/share/qflow/tech/osu018/osu018_stdcells.lib, line 8 library osu018_stdcells already exists.
+Warning: mips.rtlnopwr.v, line 8019 module FILL not found.  Creating black box for FILL_4__13745_.
+Warning: mips.sdc, 1 port 'clock' not found.
+Warning: There are 34 input ports missing set_input_delay.
+Warning: There are 66 output ports missing set_output_delay.
+Warning: There are 1220 unclocked register/latch pins.
+Warning: There are 1286 unconstrained endpoints.
+                                                          Not   
+Check type                        Total    Annotated   Annotated
+----------------------------------------------------------------
+cell setup arcs                    1220           0        1220
+cell hold arcs                     1220           0        1220
+cell recovery arcs                 4880           0        4880
+cell removal arcs                  2440           0        2440
+cell width arcs                    4880           0        4880
+----------------------------------------------------------------
+                                  14640           0       14640
+                                                          Not   
+Delay type                        Total    Annotated   Annotated
+----------------------------------------------------------------
+cell arcs                         23522           0       23522
+internal net arcs                 23006           0       23006
+net arcs from primary inputs         84           0          84
+net arcs to primary outputs          66           0          66
+----------------------------------------------------------------
+                                  46678           0       46678
+No paths found.

@@ -1,0 +1,599 @@
+[
+  {
+   "pins": [
+      [
+        "A",
+        "B",
+        "C",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "B",
+        "C",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "B",
+        "C",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "B",
+        "C",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "Q",
+        "CLK",
+        "R",
+        "S",
+        "D",
+        "gnd",
+        "vdd"
+      ], [
+        "Q",
+        "CLK",
+        "R",
+        "S",
+        "D",
+        "gnd",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "B",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "B",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "B",
+        "C",
+        "D",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "B",
+        "C",
+        "D",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "B",
+        "C",
+        "D",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "B",
+        "C",
+        "D",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "B",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "B",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "B",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "B",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "B",
+        "C",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "B",
+        "C",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "B",
+        "C",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "B",
+        "C",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "B",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "B",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "B",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "B",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "B",
+        "gnd",
+        "Y",
+        "vdd"
+      ], [
+        "A",
+        "B",
+        "gnd",
+        "Y",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "mips",
+      "mips"
+   ],
+   "devices": [
+       [
+         ["NAND2X1", 1582],
+         ["DFFSR", 1220],
+         ["INVX1", 2316],
+         ["BUFX2", 1036],
+         ["OAI21X1", 1597],
+         ["NOR2X1", 734],
+         ["OR2X2", 28],
+         ["OAI22X1", 598],
+         ["AOI22X1", 381],
+         ["NAND3X1", 570],
+         ["XNOR2X1", 9],
+         ["NOR3X1", 100],
+         ["AOI21X1", 242],
+         ["INVX8", 39],
+         ["CLKBUF1", 124],
+         ["INVX2", 52],
+         ["AND2X2", 52],
+         ["INVX4", 18],
+         ["XOR2X1", 12 ]
+       ], [
+         ["NAND2X1", 1582 ],
+         ["DFFSR", 1220 ],
+         ["INVX1", 2316 ],
+         ["BUFX2", 1036 ],
+         ["OAI21X1", 1597 ],
+         ["NOR2X1", 734 ],
+         ["OR2X2", 28 ],
+         ["OAI22X1", 598 ],
+         ["AOI22X1", 381 ],
+         ["NAND3X1", 570 ],
+         ["XNOR2X1", 9 ],
+         ["NOR3X1", 100 ],
+         ["AOI21X1", 242 ],
+         ["INVX8", 39 ],
+         ["CLKBUF1", 124 ],
+         ["INVX2", 52 ],
+         ["AND2X2", 52 ],
+         ["INVX4", 18 ],
+         ["XOR2X1", 12 ]
+       ]
+   ],
+   "nets": [
+    10746,
+    10746
+   ],
+   "badnets": [
+   ],
+   "badelements": [
+   ],
+   "pins": [
+      [
+        "clk",
+        "rst",
+        "MemWrite",
+        "MemRead",
+        "memoryWriteData[10]",
+        "memoryWriteData[12]",
+        "memoryWriteData[11]",
+        "memoryWriteData[13]",
+        "memoryWriteData[14]",
+        "memoryWriteData[15]",
+        "memoryWriteData[31]",
+        "memoryWriteData[0]",
+        "memoryWriteData[1]",
+        "memoryWriteData[2]",
+        "memoryWriteData[4]",
+        "memoryWriteData[6]",
+        "memoryWriteData[16]",
+        "memoryWriteData[3]",
+        "memoryWriteData[23]",
+        "memoryWriteData[7]",
+        "memoryWriteData[24]",
+        "memoryWriteData[21]",
+        "memoryWriteData[22]",
+        "memoryWriteData[8]",
+        "memoryWriteData[17]",
+        "memoryWriteData[5]",
+        "memoryWriteData[25]",
+        "memoryWriteData[9]",
+        "memoryWriteData[18]",
+        "memoryWriteData[30]",
+        "memoryWriteData[20]",
+        "memoryWriteData[27]",
+        "memoryWriteData[19]",
+        "memoryWriteData[28]",
+        "memoryWriteData[29]",
+        "memoryWriteData[26]",
+        "memoryAddress[24]",
+        "memoryAddress[3]",
+        "memoryAddress[0]",
+        "memoryAddress[29]",
+        "memoryAddress[31]",
+        "memoryAddress[20]",
+        "memoryAddress[26]",
+        "memoryAddress[22]",
+        "memoryAddress[25]",
+        "memoryAddress[19]",
+        "memoryAddress[18]",
+        "memoryAddress[2]",
+        "memoryAddress[10]",
+        "memoryAddress[9]",
+        "memoryAddress[11]",
+        "memoryAddress[12]",
+        "memoryAddress[8]",
+        "memoryAddress[13]",
+        "memoryAddress[27]",
+        "memoryAddress[17]",
+        "memoryAddress[1]",
+        "memoryAddress[5]",
+        "memoryAddress[4]",
+        "memoryAddress[15]",
+        "memoryAddress[6]",
+        "memoryAddress[14]",
+        "memoryAddress[16]",
+        "memoryAddress[23]",
+        "memoryAddress[21]",
+        "memoryAddress[7]",
+        "memoryAddress[28]",
+        "memoryAddress[30]",
+        "memoryOutData[0]",
+        "memoryOutData[4]",
+        "memoryOutData[2]",
+        "memoryOutData[22]",
+        "memoryOutData[17]",
+        "memoryOutData[16]",
+        "memoryOutData[14]",
+        "memoryOutData[12]",
+        "memoryOutData[11]",
+        "memoryOutData[10]",
+        "memoryOutData[8]",
+        "memoryOutData[6]",
+        "memoryOutData[24]",
+        "memoryOutData[20]",
+        "memoryOutData[19]",
+        "memoryOutData[15]",
+        "memoryOutData[31]",
+        "memoryOutData[30]",
+        "memoryOutData[29]",
+        "memoryOutData[5]",
+        "memoryOutData[26]",
+        "memoryOutData[1]",
+        "memoryOutData[21]",
+        "memoryOutData[13]",
+        "memoryOutData[9]",
+        "memoryOutData[3]",
+        "memoryOutData[25]",
+        "memoryOutData[7]",
+        "memoryOutData[28]",
+        "memoryOutData[27]",
+        "memoryOutData[23]",
+        "memoryOutData[18]",
+        "vdd",
+        "gnd"
+      ], [
+        "clk",
+        "rst",
+        "MemWrite",
+        "MemRead",
+        "memoryWriteData[10]",
+        "memoryWriteData[12]",
+        "memoryWriteData[11]",
+        "memoryWriteData[13]",
+        "memoryWriteData[14]",
+        "memoryWriteData[15]",
+        "memoryWriteData[31]",
+        "memoryWriteData[0]",
+        "memoryWriteData[1]",
+        "memoryWriteData[2]",
+        "memoryWriteData[4]",
+        "memoryWriteData[6]",
+        "memoryWriteData[16]",
+        "memoryWriteData[3]",
+        "memoryWriteData[23]",
+        "memoryWriteData[7]",
+        "memoryWriteData[24]",
+        "memoryWriteData[21]",
+        "memoryWriteData[22]",
+        "memoryWriteData[8]",
+        "memoryWriteData[17]",
+        "memoryWriteData[5]",
+        "memoryWriteData[25]",
+        "memoryWriteData[9]",
+        "memoryWriteData[18]",
+        "memoryWriteData[30]",
+        "memoryWriteData[20]",
+        "memoryWriteData[27]",
+        "memoryWriteData[19]",
+        "memoryWriteData[28]",
+        "memoryWriteData[29]",
+        "memoryWriteData[26]",
+        "memoryAddress[24]",
+        "memoryAddress[3]",
+        "memoryAddress[0]",
+        "memoryAddress[29]",
+        "memoryAddress[31]",
+        "memoryAddress[20]",
+        "memoryAddress[26]",
+        "memoryAddress[22]",
+        "memoryAddress[25]",
+        "memoryAddress[19]",
+        "memoryAddress[18]",
+        "memoryAddress[2]",
+        "memoryAddress[10]",
+        "memoryAddress[9]",
+        "memoryAddress[11]",
+        "memoryAddress[12]",
+        "memoryAddress[8]",
+        "memoryAddress[13]",
+        "memoryAddress[27]",
+        "memoryAddress[17]",
+        "memoryAddress[1]",
+        "memoryAddress[5]",
+        "memoryAddress[4]",
+        "memoryAddress[15]",
+        "memoryAddress[6]",
+        "memoryAddress[14]",
+        "memoryAddress[16]",
+        "memoryAddress[23]",
+        "memoryAddress[21]",
+        "memoryAddress[7]",
+        "memoryAddress[28]",
+        "memoryAddress[30]",
+        "memoryOutData[0]",
+        "memoryOutData[4]",
+        "memoryOutData[2]",
+        "memoryOutData[22]",
+        "memoryOutData[17]",
+        "memoryOutData[16]",
+        "memoryOutData[14]",
+        "memoryOutData[12]",
+        "memoryOutData[11]",
+        "memoryOutData[10]",
+        "memoryOutData[8]",
+        "memoryOutData[6]",
+        "memoryOutData[24]",
+        "memoryOutData[20]",
+        "memoryOutData[19]",
+        "memoryOutData[15]",
+        "memoryOutData[31]",
+        "memoryOutData[30]",
+        "memoryOutData[29]",
+        "memoryOutData[5]",
+        "memoryOutData[26]",
+        "memoryOutData[1]",
+        "memoryOutData[21]",
+        "memoryOutData[13]",
+        "memoryOutData[9]",
+        "memoryOutData[3]",
+        "memoryOutData[25]",
+        "memoryOutData[7]",
+        "memoryOutData[28]",
+        "memoryOutData[27]",
+        "memoryOutData[23]",
+        "memoryOutData[18]",
+        "vdd",
+        "gnd"
+      ]
+   ]
+  }
+]

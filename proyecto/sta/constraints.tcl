@@ -1,6 +1,3 @@
-read_liberty osu018_stdcells.lib
-read_verilog ./synth.v
-link_design mips
 set period 10
 set dfactor 10
 create_clock -name clk -period $period {clk}
@@ -11,5 +8,3 @@ set_output_delay -clock clk [expr $period/$dfactor] [get_port memoryAddress*]
 set_output_delay -clock clk [expr $period/$dfactor] [get_port memoryWriteData*]
 set_output_delay -clock clk [expr $period/$dfactor] [get_port MemRead]
 set_output_delay -clock clk [expr $period/$dfactor] [get_port MemWrite]
-report_checks
-report_power

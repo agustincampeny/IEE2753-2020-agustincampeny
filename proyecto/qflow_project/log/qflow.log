@@ -1,19 +1,1252 @@
-Starting new log file Sun Jul 19 01:55:47 2020
+Starting new log file Sun Jul 19 07:20:30 2020
 
 --------------------------------
 Qflow project setup
 --------------------------------
 
-Technology set to osu035_redm4 from existing qflow_vars.sh file
+Technology set to osu018 from existing qflow_vars.sh file
 Regenerating files for existing project mips
-Running yosys for verilog parsing and synthesis
-yosys  -s mips.ys
+Creating OpenSTA input file mips.conf
 
-/----------------------------------------------------------------------------\
-|                                                                            |
-|  yosys -- Yosys Open SYnthesis Suite                                       |
-|                                                                            |
-|  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
-|                                                                            |
-|  Permission to use, copy, modify, and/or distribute this software for any  |
-|  purpose with or without fee is hereby granted, provided that the above    |
+Running OpenSTA static timing analysis
+sta  < mips.conf
+
+OpenSTA 2.2.0 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details.
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Warning: /usr/local/share/qflow/tech/osu018/osu018_stdcells.lib, line 8 library osu018_stdcells already exists.
+Warning: mips.rtlnopwr.v, line 8019 module FILL not found.  Creating black box for FILL_4__13745_.
+Warning: mips.sdc, 1 port 'clock' not found.
+Warning: There are 34 input ports missing set_input_delay.
+Warning: There are 66 output ports missing set_output_delay.
+Warning: There are 1220 unclocked register/latch pins.
+Warning: There are 1286 unconstrained endpoints.
+Not
+Check type                        Total    Annotated   Annotated
+----------------------------------------------------------------
+cell setup arcs                    1220           0        1220
+cell hold arcs                     1220           0        1220
+
+
+--------------------------------
+Qflow project setup
+--------------------------------
+
+Technology set to osu018 from existing qflow_vars.sh file
+Regenerating files for existing project mips
+Running qrouter 1.4.83.T
+qrouter -noc  -s mips.cfg
+*** Running stage1 routing with defaults
+Nets remaining: 10700
+Nets remaining: 10600
+Nets remaining: 10500
+Nets remaining: 10400
+Nets remaining: 10300
+Nets remaining: 10200
+Nets remaining: 10100
+Nets remaining: 10000
+Nets remaining: 9900
+Nets remaining: 9800
+Nets remaining: 9700
+Nets remaining: 9600
+Nets remaining: 9500
+Nets remaining: 9400
+Nets remaining: 9300
+Nets remaining: 9200
+Nets remaining: 9100
+Nets remaining: 9000
+Nets remaining: 8900
+Nets remaining: 8800
+Nets remaining: 8700
+Nets remaining: 8600
+Nets remaining: 8500
+Nets remaining: 8400
+Nets remaining: 8300
+Nets remaining: 8200
+Nets remaining: 8100
+Nets remaining: 8000
+Nets remaining: 7900
+Nets remaining: 7800
+Nets remaining: 7700
+Nets remaining: 7600
+Nets remaining: 7500
+Nets remaining: 7400
+Nets remaining: 7300
+Nets remaining: 7200
+Nets remaining: 7100
+Nets remaining: 7000
+Nets remaining: 6900
+Nets remaining: 6800
+Nets remaining: 6700
+Nets remaining: 6600
+Nets remaining: 6500
+Nets remaining: 6400
+Nets remaining: 6300
+Nets remaining: 6200
+Nets remaining: 6100
+Nets remaining: 6000
+Nets remaining: 5900
+Nets remaining: 5800
+Nets remaining: 5700
+Nets remaining: 5600
+Nets remaining: 5500
+Nets remaining: 5400
+Nets remaining: 5300
+Nets remaining: 5200
+Nets remaining: 5100
+Nets remaining: 5000
+Nets remaining: 4900
+Nets remaining: 4800
+Nets remaining: 4700
+Nets remaining: 4600
+Nets remaining: 4500
+Nets remaining: 4400
+Nets remaining: 4300
+Nets remaining: 4200
+Nets remaining: 4100
+Nets remaining: 4000
+Nets remaining: 3900
+Nets remaining: 3800
+Nets remaining: 3700
+Nets remaining: 3600
+Nets remaining: 3500
+Nets remaining: 3400
+Nets remaining: 3300
+Nets remaining: 3200
+Nets remaining: 3100
+Nets remaining: 3000
+Nets remaining: 2900
+Nets remaining: 2800
+Nets remaining: 2700
+Nets remaining: 2600
+Nets remaining: 2500
+Nets remaining: 2400
+Nets remaining: 2300
+Nets remaining: 2200
+Nets remaining: 2100
+Nets remaining: 2000
+Nets remaining: 1900
+Nets remaining: 1800
+Nets remaining: 1700
+Nets remaining: 1600
+Nets remaining: 1500
+Nets remaining: 1400
+Nets remaining: 1300
+Nets remaining: 1200
+Nets remaining: 1100
+Nets remaining: 1000
+Nets remaining: 900
+Nets remaining: 800
+Nets remaining: 700
+Nets remaining: 600
+Nets remaining: 500
+Nets remaining: 400
+Nets remaining: 300
+Nets remaining: 200
+Progress: Stage 1 total routes completed: 24569
+Failed net routes: 189
+*** Running stage2 routing with options mask 10, effort 10
+Nets remaining: 100
+Nets remaining: 90
+Nets remaining: 90
+Nets remaining: 80
+Nets remaining: 70
+Nets remaining: 70
+Nets remaining: 70
+Nets remaining: 60
+Nets remaining: 50
+Nets remaining: 40
+Nets remaining: 40
+Nets remaining: 40
+Nets remaining: 30
+Nets remaining: 30
+Nets remaining: 30
+Nets remaining: 20
+Nets remaining: 10
+Nets remaining: 9
+Nets remaining: 8
+Nets remaining: 7
+Nets remaining: 6
+Nets remaining: 5
+Nets remaining: 4
+Nets remaining: 4
+Nets remaining: 3
+Nets remaining: 2
+Nets remaining: 1
+Progress: Stage 2 total routes completed: 25755
+No failed routes!
+*** Running stage3 routing with defaults, 1st round
+Nets remaining: 10700
+Nets remaining: 10600
+Nets remaining: 10500
+Nets remaining: 10400
+Nets remaining: 10300
+Nets remaining: 10200
+Nets remaining: 10100
+Nets remaining: 10000
+Nets remaining: 9900
+Nets remaining: 9800
+Nets remaining: 9700
+Nets remaining: 9600
+Nets remaining: 9500
+Nets remaining: 9400
+Nets remaining: 9300
+Nets remaining: 9200
+Nets remaining: 9100
+Nets remaining: 9000
+Nets remaining: 8900
+Nets remaining: 8800
+Nets remaining: 8700
+Nets remaining: 8600
+Nets remaining: 8500
+Nets remaining: 8400
+Nets remaining: 8300
+Nets remaining: 8200
+Nets remaining: 8100
+Nets remaining: 8000
+Nets remaining: 7900
+Nets remaining: 7800
+Nets remaining: 7700
+Nets remaining: 7600
+Nets remaining: 7500
+Nets remaining: 7400
+Nets remaining: 7300
+Nets remaining: 7200
+Nets remaining: 7100
+Nets remaining: 6900
+Nets remaining: 6800
+Nets remaining: 6700
+Nets remaining: 6600
+Nets remaining: 6400
+Nets remaining: 6300
+Nets remaining: 6200
+Nets remaining: 6100
+Nets remaining: 6000
+Nets remaining: 5900
+Nets remaining: 5800
+Nets remaining: 5700
+Nets remaining: 5600
+Nets remaining: 5500
+Nets remaining: 5400
+Nets remaining: 5300
+Nets remaining: 5100
+Nets remaining: 4900
+Nets remaining: 4800
+Nets remaining: 4700
+Nets remaining: 4600
+Nets remaining: 4500
+Nets remaining: 4400
+Nets remaining: 4300
+Nets remaining: 4200
+Nets remaining: 4100
+Nets remaining: 4000
+Nets remaining: 3900
+Nets remaining: 3800
+Nets remaining: 3700
+Nets remaining: 3600
+Nets remaining: 3500
+Nets remaining: 3400
+Nets remaining: 3300
+Nets remaining: 3200
+Nets remaining: 3100
+Nets remaining: 3000
+Nets remaining: 2900
+Nets remaining: 2800
+Nets remaining: 2700
+Nets remaining: 2600
+Nets remaining: 2500
+Nets remaining: 2400
+Nets remaining: 2300
+Nets remaining: 2200
+Nets remaining: 2100
+Nets remaining: 2000
+Nets remaining: 1900
+Nets remaining: 1800
+Nets remaining: 1600
+Nets remaining: 1500
+Nets remaining: 1400
+Nets remaining: 1300
+Nets remaining: 1100
+Nets remaining: 1000
+Nets remaining: 900
+Nets remaining: 800
+Nets remaining: 700
+Nets remaining: 600
+Nets remaining: 500
+Nets remaining: 400
+Nets remaining: 300
+Nets remaining: 200
+Nets remaining: 100
+Nets remaining: 90
+Nets remaining: 80
+Nets remaining: 70
+Nets remaining: 60
+Nets remaining: 50
+Nets remaining: 40
+Nets remaining: 20
+Nets remaining: 10
+Nets remaining: 8
+Nets remaining: 6
+Nets remaining: 5
+Nets remaining: 4
+Nets remaining: 3
+Nets remaining: 2
+Nets remaining: 1
+Progress: Stage 3 total routes completed: 49265
+Failed net routes: 3
+*** Running stage2 routing with options mask none
+Nets remaining: 3
+Nets remaining: 2
+Nets remaining: 1
+Progress: Stage 2 total routes completed: 49278
+No failed routes!
+*** Running stage3 routing with defaults, 2nd round
+Nets remaining: 10700
+Nets remaining: 10400
+Nets remaining: 10300
+Nets remaining: 10200
+Nets remaining: 10100
+Nets remaining: 10000
+Nets remaining: 9900
+Nets remaining: 9800
+Nets remaining: 9700
+Nets remaining: 9600
+Nets remaining: 9500
+Nets remaining: 9400
+Nets remaining: 9300
+Nets remaining: 9200
+Nets remaining: 9100
+Nets remaining: 9000
+Nets remaining: 8900
+Nets remaining: 8800
+Nets remaining: 8700
+Nets remaining: 8600
+Nets remaining: 8500
+Nets remaining: 8400
+Nets remaining: 8300
+Nets remaining: 8200
+Nets remaining: 8100
+Nets remaining: 8000
+Nets remaining: 7900
+Nets remaining: 7800
+Nets remaining: 7700
+Nets remaining: 7600
+Nets remaining: 7500
+Nets remaining: 7400
+Nets remaining: 7300
+Nets remaining: 7200
+Nets remaining: 7100
+Nets remaining: 7000
+Nets remaining: 6900
+Nets remaining: 6800
+Nets remaining: 6700
+Nets remaining: 6600
+Nets remaining: 6400
+Nets remaining: 6300
+Nets remaining: 6200
+Nets remaining: 6100
+Nets remaining: 6000
+Nets remaining: 5900
+Nets remaining: 5800
+Nets remaining: 5700
+Nets remaining: 5500
+Nets remaining: 5300
+Nets remaining: 5100
+Nets remaining: 4900
+Nets remaining: 4800
+Nets remaining: 4700
+Nets remaining: 4600
+Nets remaining: 4500
+Nets remaining: 4400
+Nets remaining: 4300
+Nets remaining: 4200
+Nets remaining: 4100
+Nets remaining: 4000
+Nets remaining: 3900
+Nets remaining: 3800
+Nets remaining: 3600
+Nets remaining: 3500
+Nets remaining: 3400
+Nets remaining: 3300
+Nets remaining: 3200
+Nets remaining: 3100
+Nets remaining: 3000
+Nets remaining: 2900
+Nets remaining: 2800
+Nets remaining: 2700
+Nets remaining: 2600
+Nets remaining: 2500
+Nets remaining: 2400
+Nets remaining: 2300
+Nets remaining: 2200
+Nets remaining: 2100
+Nets remaining: 2000
+Nets remaining: 1900
+Nets remaining: 1800
+Nets remaining: 1600
+Nets remaining: 1500
+Nets remaining: 1400
+Nets remaining: 1300
+Nets remaining: 1100
+Nets remaining: 1000
+Nets remaining: 900
+Nets remaining: 800
+Nets remaining: 700
+Nets remaining: 600
+Nets remaining: 400
+Nets remaining: 300
+Nets remaining: 200
+Nets remaining: 100
+Nets remaining: 90
+Nets remaining: 80
+Nets remaining: 70
+Nets remaining: 60
+Nets remaining: 50
+Nets remaining: 40
+Nets remaining: 20
+Nets remaining: 10
+Nets remaining: 8
+Nets remaining: 6
+Nets remaining: 5
+Nets remaining: 4
+Nets remaining: 3
+Nets remaining: 2
+Nets remaining: 1
+Progress: Stage 3 total routes completed: 72576
+No failed routes!
+*** Writing DEF file mips_route.def
+Final: No failed routes!
+*** Writing RC file mips_route.rc
+DEF2Verilog -v /home/osboxes/Desktop/proyecto/qflow_project/synthesis/mips.rtlnopwr.v -o /home/osboxes/Desktop/proyecto/qflow_project/synthesis/mips_postroute.v
+-p vdd -g gnd  -l  /usr/local/share/qflow/tech/osu018/osu018_stdcells.lef mips_route.def
+Generating RTL verilog and SPICE netlist file in directory
+/home/osboxes/Desktop/proyecto/qflow_project/synthesis
+Running vlog2Verilog.
+vlog2Verilog -c -v vdd -g gnd -o mips.rtl.anno.v mips_postroute.v
+vlog2Verilog -c -p -v vdd -g gnd -o mips.rtlnopwr.anno.v mips_postroute.v
+/usr/local/share/qflow/bin/vlog2Verilog -c -b -p -n -v vdd -g gnd -o mips.rtlbb.anno.v mips_postroute.v
+Running vlog2Spice.
+vlog2Spice -i -l  /usr/local/share/qflow/tech/osu018/osu018_stdcells.sp -o mips.anno.spc mips.rtl.anno.v
+
+--------------------------------
+Qflow project setup
+--------------------------------
+
+Technology set to osu018 from existing qflow_vars.sh file
+Regenerating files for existing project mips
+Converting qrouter output to vesta delay format
+Running rc2dly -r mips.rc -l /usr/local/share/qflow/tech/osu018/osu018_stdcells.lib -V /home/osboxes/Desktop/proyecto/qflow_project/synthesis/mips.rtl.v
+-d mips.dly
+Reading Liberty timing file /usr/local/share/qflow/tech/osu018/osu018_stdcells.lib
+Parsing library "osu018_stdcells"
+End of library at line 6141
+Lib Read:  Processed 6142 lines.
+Number of Rs: 56828
+TBD: need to clean-up node deletion
+Converting qrouter output to SDF delay format
+Running rc2dly -r mips.rc -l /usr/local/share/qflow/tech/osu018/osu018_stdcells.lib -V /home/osboxes/Desktop/proyecto/qflow_project/synthesis/mips.rtl.v
+-d mips.sdf
+Reading Liberty timing file /usr/local/share/qflow/tech/osu018/osu018_stdcells.lib
+Parsing library "osu018_stdcells"
+End of library at line 6141
+Lib Read:  Processed 6142 lines.
+Number of Rs: 56828
+TBD: need to clean-up node deletion
+Creating example SDC file for timing
+Creating OpenSTA input file mips.conf
+
+Running OpenSTA static timing analysis with back-annotated extracted wire delays
+sta  < mips.conf
+
+OpenSTA 2.2.0 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details.
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Warning: /usr/local/share/qflow/tech/osu018/osu018_stdcells.lib, line 8 library osu018_stdcells already exists.
+Warning: mips.rtlnopwr.v, line 8019 module FILL not found.  Creating black box for FILL_4__13745_.
+Warning: mips_post.sdc, 1 port 'clock' not found.
+Warning: mips_post.sdc, 2 virtual clock clock can not be propagated.
+
+--------------------------------
+Qflow project setup
+--------------------------------
+
+Technology set to osu018 from existing qflow_vars.sh file
+Regenerating files for existing project mips
+Running magic 8.3.35
+magic -dnull -noconsole  migrate_mips.tcl
+
+Magic 8.3 revision 35 - Compiled on Sun Jul 19 00:24:41 EDT 2020.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+Using NULL graphics device.
+Processing system .magicrc file
+Input style lambda=0.10(p): scaleFactor=10, multiplier=1
+Contact size value ignored (using GDS generation rules).
+Contact size value ignored (using GDS generation rules).
+Contact size value ignored (using GDS generation rules).
+Contact size value ignored (using GDS generation rules).
+Contact size value ignored (using GDS generation rules).
+Contact size value ignored (using GDS generation rules).
+Loading "migrate_mips.tcl" from command line.
+Root cell box:
+width x height  (   llx,  lly  ), (   urx,  ury  )
+
+microns:    0.00 x 0.00    (  0.00,  0.00 ), (  0.00,  0.00 )
+lambda:        0 x 0       (     0,  0    ), (     0,  0    )
+Reading LEF data from file /usr/local/share/qflow/tech/osu018/osu018_stdcells.lef.
+This action cannot be undone.
+LEF read, Line 16 (Message): Unknown keyword "OBS" in LEF file; ignoring.
+LEF read, Line 17 (Message): Unknown keyword "PIN" in LEF file; ignoring.
+LEF read: Processed 2941 lines.
+Reading DEF data from file mips.def.
+This action cannot be undone.
+Processed 5 vias total.
+Processed 75815 subcell instances total.
+Processed 102 pins total.
+Processed 10746 nets total.
+Processed 1495 special nets total.
+DEF read: Processed 221687 lines.
+Generating LEF output mips.lef for cell mips:
+Diagnostic:  Write LEF header for cell mips
+Diagnostic:  Writing LEF output for cell mips
+Diagnostic:  Scale value is 0.100000
+Extracting INVX4 into INVX4.ext:
+Completed 100%
+Extracting NOR3X1 into NOR3X1.ext:
+Completed 100%
+Extracting INVX8 into INVX8.ext:
+Completed 100%
+Extracting OAI22X1 into OAI22X1.ext:
+Completed 100%
+Extracting AOI22X1 into AOI22X1.ext:
+Completed 100%
+Extracting OR2X2 into OR2X2.ext:
+Completed 100%
+Extracting DFFSR into DFFSR.ext:
+Completed 50%
+Completed 75%
+Completed 100%
+Extracting CLKBUF1 into CLKBUF1.ext:
+Completed 100%
+Extracting AND2X2 into AND2X2.ext:
+Completed 100%
+Extracting BUFX2 into BUFX2.ext:
+Completed 100%
+Extracting XOR2X1 into XOR2X1.ext:
+Completed 100%
+Extracting XNOR2X1 into XNOR2X1.ext:
+Completed 100%
+Extracting INVX1 into INVX1.ext:
+Completed 100%
+Extracting NAND2X1 into NAND2X1.ext:
+Completed 100%
+Extracting OAI21X1 into OAI21X1.ext:
+Completed 100%
+Extracting AOI21X1 into AOI21X1.ext:
+Completed 100%
+Extracting NAND3X1 into NAND3X1.ext:
+Completed 100%
+Extracting NOR2X1 into NOR2X1.ext:
+Completed 100%
+Extracting INVX2 into INVX2.ext:
+Completed 100%
+Extracting FILL into FILL.ext:
+Completed 100%
+Extracting mips into mips.ext:
+Completed 5%
+Completed 10%
+Completed 15%
+Completed 20%
+Completed 25%
+Completed 30%
+Completed 35%
+Completed 40%
+Completed 45%
+Completed 50%
+Completed 55%
+Completed 60%
+Completed 65%
+Completed 70%
+Completed 75%
+Completed 80%
+Completed 85%
+Completed 90%
+Completed 95%
+Completed 100%
+
+--------------------------------
+Qflow project setup
+--------------------------------
+
+Technology set to osu018 from existing qflow_vars.sh file
+Regenerating files for existing project mips
+Running magic 8.3.35
+magic -dnull -noconsole  /home/osboxes/Desktop/proyecto/qflow_project/layout/run_drc_mips.tcl
+
+Magic 8.3 revision 35 - Compiled on Sun Jul 19 00:24:41 EDT 2020.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+Using NULL graphics device.
+Processing system .magicrc file
+Input style lambda=0.10(p): scaleFactor=10, multiplier=1
+Contact size value ignored (using GDS generation rules).
+Contact size value ignored (using GDS generation rules).
+Contact size value ignored (using GDS generation rules).
+Contact size value ignored (using GDS generation rules).
+Contact size value ignored (using GDS generation rules).
+Contact size value ignored (using GDS generation rules).
+Loading "/home/osboxes/Desktop/proyecto/qflow_project/layout/run_drc_mips.tcl" from command line.
+Reading LEF data from file /usr/local/share/qflow/tech/osu018/osu018_stdcells.lef.
+This action cannot be undone.
+LEF read, Line 16 (Message): Unknown keyword "OBS" in LEF file; ignoring.
+LEF read, Line 17 (Message): Unknown keyword "PIN" in LEF file; ignoring.
+LEF read: Processed 2941 lines.
+mips: 10000 rects
+mips: 20000 rects
+mips: 30000 rects
+mips: 40000 rects
+mips: 50000 rects
+mips: 60000 rects
+mips: 70000 rects
+mips: 80000 rects
+mips: 90000 rects
+mips: 100000 rects
+mips: 110000 rects
+mips: 120000 rects
+mips: 130000 rects
+mips: 140000 rects
+mips: 150000 rects
+mips: 160000 rects
+mips: 170000 rects
+mips: 180000 rects
+mips: 190000 rects
+mips: 200000 rects
+mips: 210000 rects
+Processing timestamp mismatches: FILL, INVX1, BUFX2, NAND2X1, OAI21X1, CLKBUF1, DFFSR, NOR3X1, NOR2X1, OR2X2, NAND3X1, AND2X2, INVX2, AOI21X1, AOI22X1, OAI22X1, INVX4, INVX8, XOR2X1, XNOR2X1.
+
+--------------------------------
+Qflow project setup
+--------------------------------
+
+Technology set to osu018 from existing qflow_vars.sh file
+Regenerating files for existing project mips
+Warning:  No migration logfile found.
+Running netgen
+netgen -batch lvs "mips.spice mips" "/home/osboxes/Desktop/proyecto/qflow_project/synthesis/mips.spc mips" /usr/local/share/qflow/tech/osu018/osu018_setup.tcl comp.out -json -blackbox
+Netgen 1.5.149 compiled on Sun Jul 19 00:26:38 EDT 2020
+Warning: netgen command 'format' use fully-qualified name '::netgen::format'
+Warning: netgen command 'global' use fully-qualified name '::netgen::global'
+Generating JSON file result
+Treating empty subcircuits as black-box cells
+Reading netlist file mips.spice
+Reading netlist file /home/osboxes/Desktop/proyecto/qflow_project/synthesis/mips.spc
+Reading setup file /usr/local/share/qflow/tech/osu018/osu018_setup.tcl
+Error /usr/local/share/qflow/tech/osu018/osu018_setup.tcl:5 (ignoring), No such cell or bad file number!
+Error /usr/local/share/qflow/tech/osu018/osu018_setup.tcl:6 (ignoring), No such cell or bad file number!
+Warning:  There were errors reading the setup file
+Comparison output logged to file comp.out
+Logging to file "comp.out" enabled
+Contents of circuit 1:  Circuit: 'AOI21X1'
+Circuit AOI21X1 contains 0 device instances.
+Circuit contains 0 nets, and 6 disconnected pins.
+Contents of circuit 2:  Circuit: 'AOI21X1'
+Circuit AOI21X1 contains 6 device instances.
+Class: pfet                  instances:   3
+Class: nfet                  instances:   3
+Circuit contains 8 nets.
+
+Circuit AOI21X1 contains no devices.
+Contents of circuit 1:  Circuit: 'INVX2'
+Circuit INVX2 contains 0 device instances.
+Circuit contains 0 nets, and 4 disconnected pins.
+Contents of circuit 2:  Circuit: 'INVX2'
+Circuit INVX2 contains 2 device instances.
+Class: pfet                  instances:   1
+Class: nfet                  instances:   1
+Circuit contains 4 nets.
+
+Circuit INVX2 contains no devices.
+Contents of circuit 1:  Circuit: 'INVX1'
+Circuit INVX1 contains 0 device instances.
+Circuit contains 0 nets, and 4 disconnected pins.
+Contents of circuit 2:  Circuit: 'INVX1'
+Circuit INVX1 contains 2 device instances.
+Class: pfet                  instances:   1
+Class: nfet                  instances:   1
+Circuit contains 4 nets.
+
+Circuit INVX1 contains no devices.
+Contents of circuit 1:  Circuit: 'OAI21X1'
+Circuit OAI21X1 contains 0 device instances.
+Circuit contains 0 nets, and 6 disconnected pins.
+Contents of circuit 2:  Circuit: 'OAI21X1'
+Circuit OAI21X1 contains 6 device instances.
+Class: pfet                  instances:   3
+Class: nfet                  instances:   3
+Circuit contains 8 nets.
+
+Circuit OAI21X1 contains no devices.
+Contents of circuit 1:  Circuit: 'DFFSR'
+Circuit DFFSR contains 0 device instances.
+Circuit contains 0 nets, and 7 disconnected pins.
+Contents of circuit 2:  Circuit: 'DFFSR'
+Circuit DFFSR contains 32 device instances.
+Class: pfet                  instances:  16
+Class: nfet                  instances:  16
+Circuit contains 20 nets.
+
+Circuit DFFSR contains no devices.
+Contents of circuit 1:  Circuit: 'NOR2X1'
+Circuit NOR2X1 contains 0 device instances.
+Circuit contains 0 nets, and 5 disconnected pins.
+Contents of circuit 2:  Circuit: 'NOR2X1'
+Circuit NOR2X1 contains 4 device instances.
+Class: pfet                  instances:   2
+Class: nfet                  instances:   2
+Circuit contains 6 nets.
+
+Circuit NOR2X1 contains no devices.
+Contents of circuit 1:  Circuit: 'AOI22X1'
+Circuit AOI22X1 contains 0 device instances.
+Circuit contains 0 nets, and 7 disconnected pins.
+Contents of circuit 2:  Circuit: 'AOI22X1'
+Circuit AOI22X1 contains 8 device instances.
+Class: pfet                  instances:   4
+Class: nfet                  instances:   4
+Circuit contains 10 nets.
+
+Circuit AOI22X1 contains no devices.
+Contents of circuit 1:  Circuit: 'OAI22X1'
+Circuit OAI22X1 contains 0 device instances.
+Circuit contains 0 nets, and 7 disconnected pins.
+Contents of circuit 2:  Circuit: 'OAI22X1'
+Circuit OAI22X1 contains 8 device instances.
+Class: pfet                  instances:   4
+Class: nfet                  instances:   4
+Circuit contains 10 nets.
+
+Circuit OAI22X1 contains no devices.
+Contents of circuit 1:  Circuit: 'NAND2X1'
+Circuit NAND2X1 contains 0 device instances.
+Circuit contains 0 nets, and 5 disconnected pins.
+Contents of circuit 2:  Circuit: 'NAND2X1'
+Circuit NAND2X1 contains 4 device instances.
+Class: pfet                  instances:   2
+Class: nfet                  instances:   2
+Circuit contains 6 nets.
+
+Circuit NAND2X1 contains no devices.
+Contents of circuit 1:  Circuit: 'AND2X2'
+Circuit AND2X2 contains 0 device instances.
+Circuit contains 0 nets, and 5 disconnected pins.
+Contents of circuit 2:  Circuit: 'AND2X2'
+Circuit AND2X2 contains 6 device instances.
+Class: pfet                  instances:   3
+Class: nfet                  instances:   3
+Circuit contains 7 nets.
+
+Circuit AND2X2 contains no devices.
+Contents of circuit 1:  Circuit: 'NAND3X1'
+Circuit NAND3X1 contains 0 device instances.
+Circuit contains 0 nets, and 6 disconnected pins.
+Contents of circuit 2:  Circuit: 'NAND3X1'
+Circuit NAND3X1 contains 6 device instances.
+Class: pfet                  instances:   3
+Class: nfet                  instances:   3
+Circuit contains 8 nets.
+
+Circuit NAND3X1 contains no devices.
+Contents of circuit 1:  Circuit: 'BUFX2'
+Circuit BUFX2 contains 0 device instances.
+Circuit contains 0 nets, and 4 disconnected pins.
+Contents of circuit 2:  Circuit: 'BUFX2'
+Circuit BUFX2 contains 4 device instances.
+Class: pfet                  instances:   2
+Class: nfet                  instances:   2
+Circuit contains 5 nets.
+
+Circuit BUFX2 contains no devices.
+Contents of circuit 1:  Circuit: 'CLKBUF1'
+Circuit CLKBUF1 contains 0 device instances.
+Circuit contains 0 nets, and 4 disconnected pins.
+Contents of circuit 2:  Circuit: 'CLKBUF1'
+Circuit CLKBUF1 contains 16 device instances.
+Class: pfet                  instances:   8
+Class: nfet                  instances:   8
+Circuit contains 7 nets.
+
+Circuit CLKBUF1 contains no devices.
+Contents of circuit 1:  Circuit: 'INVX4'
+Circuit INVX4 contains 0 device instances.
+Circuit contains 0 nets, and 4 disconnected pins.
+Contents of circuit 2:  Circuit: 'INVX4'
+Circuit INVX4 contains 4 device instances.
+Class: pfet                  instances:   2
+Class: nfet                  instances:   2
+Circuit contains 4 nets.
+
+Circuit INVX4 contains no devices.
+Contents of circuit 1:  Circuit: 'NOR3X1'
+Circuit NOR3X1 contains 0 device instances.
+Circuit contains 0 nets, and 6 disconnected pins.
+Contents of circuit 2:  Circuit: 'NOR3X1'
+Circuit NOR3X1 contains 9 device instances.
+Class: pfet                  instances:   6
+Class: nfet                  instances:   3
+Circuit contains 8 nets.
+
+Circuit NOR3X1 contains no devices.
+Contents of circuit 1:  Circuit: 'OR2X2'
+Circuit OR2X2 contains 0 device instances.
+Circuit contains 0 nets, and 5 disconnected pins.
+Contents of circuit 2:  Circuit: 'OR2X2'
+Circuit OR2X2 contains 6 device instances.
+Class: pfet                  instances:   3
+Class: nfet                  instances:   3
+Circuit contains 7 nets.
+
+Circuit OR2X2 contains no devices.
+Contents of circuit 1:  Circuit: 'XNOR2X1'
+Circuit XNOR2X1 contains 0 device instances.
+Circuit contains 0 nets, and 5 disconnected pins.
+Contents of circuit 2:  Circuit: 'XNOR2X1'
+Circuit XNOR2X1 contains 12 device instances.
+Class: pfet                  instances:   6
+Class: nfet                  instances:   6
+Circuit contains 11 nets.
+
+Circuit XNOR2X1 contains no devices.
+Contents of circuit 1:  Circuit: 'INVX8'
+Circuit INVX8 contains 0 device instances.
+Circuit contains 0 nets, and 4 disconnected pins.
+Contents of circuit 2:  Circuit: 'INVX8'
+Circuit INVX8 contains 8 device instances.
+Class: pfet                  instances:   4
+Class: nfet                  instances:   4
+Circuit contains 4 nets.
+
+Circuit INVX8 contains no devices.
+Contents of circuit 1:  Circuit: 'XOR2X1'
+Circuit XOR2X1 contains 0 device instances.
+Circuit contains 0 nets, and 5 disconnected pins.
+Contents of circuit 2:  Circuit: 'XOR2X1'
+Circuit XOR2X1 contains 12 device instances.
+Class: pfet                  instances:   6
+Class: nfet                  instances:   6
+Circuit contains 11 nets.
+
+Circuit XOR2X1 contains no devices.
+Contents of circuit 1:  Circuit: 'mips'
+Circuit mips contains 10710 device instances.
+Class: NOR3X1                instances: 100
+Class: OR2X2                 instances:  28
+Class: AOI22X1               instances: 381
+Class: NOR2X1                instances: 734
+Class: NAND3X1               instances: 570
+Class: OAI22X1               instances: 598
+Class: XOR2X1                instances:  12
+Class: AOI21X1               instances: 242
+Class: NAND2X1               instances: 1582
+Class: OAI21X1               instances: 1597
+Class: XNOR2X1               instances:   9
+Class: BUFX2                 instances: 1036
+Class: DFFSR                 instances: 1220
+Class: AND2X2                instances:  52
+Class: CLKBUF1               instances: 124
+Class: INVX1                 instances: 2316
+Class: INVX2                 instances:  52
+Class: INVX4                 instances:  18
+Class: INVX8                 instances:  39
+Circuit contains 10746 nets.
+Contents of circuit 2:  Circuit: 'mips'
+Circuit mips contains 10710 device instances.
+Class: NOR3X1                instances: 100
+Class: OR2X2                 instances:  28
+Class: AOI22X1               instances: 381
+Class: NOR2X1                instances: 734
+Class: NAND3X1               instances: 570
+Class: OAI22X1               instances: 598
+Class: XOR2X1                instances:  12
+Class: AOI21X1               instances: 242
+Class: NAND2X1               instances: 1582
+Class: OAI21X1               instances: 1597
+Class: XNOR2X1               instances:   9
+Class: BUFX2                 instances: 1036
+Class: DFFSR                 instances: 1220
+Class: AND2X2                instances:  52
+Class: CLKBUF1               instances: 124
+Class: INVX1                 instances: 2316
+Class: INVX2                 instances:  52
+Class: INVX4                 instances:  18
+Class: INVX8                 instances:  39
+Circuit contains 10746 nets.
+
+Circuit 1 contains 10710 devices, Circuit 2 contains 10710 devices.
+Circuit 1 contains 10746 nets,    Circuit 2 contains 10746 nets.
+
+Netlists match uniquely.
+Result: Circuits match uniquely.
+Logging to file "comp.out" disabled
+LVS Done.
+Running count_lvs.py
+/usr/local/share/qflow/scripts/count_lvs.py
+
+--------------------------------
+Qflow project setup
+--------------------------------
+
+Technology set to osu018 from existing qflow_vars.sh file
+Regenerating files for existing project mips
+Running magic 8.3.35
+magic -dnull -noconsole  /home/osboxes/Desktop/proyecto/qflow_project/layout/generate_gds_mips.tcl
+
+Magic 8.3 revision 35 - Compiled on Sun Jul 19 00:24:41 EDT 2020.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+Using NULL graphics device.
+Processing system .magicrc file
+Input style lambda=0.10(p): scaleFactor=10, multiplier=1
+Contact size value ignored (using GDS generation rules).
+Contact size value ignored (using GDS generation rules).
+Contact size value ignored (using GDS generation rules).
+Contact size value ignored (using GDS generation rules).
+Contact size value ignored (using GDS generation rules).
+Contact size value ignored (using GDS generation rules).
+Loading "/home/osboxes/Desktop/proyecto/qflow_project/layout/generate_gds_mips.tcl" from command line.
+Root cell box:
+width x height  (   llx,  lly  ), (   urx,  ury  )
+
+microns:    0.00 x 0.00    (  0.00,  0.00 ), (  0.00,  0.00 )
+lambda:        0 x 0       (     0,  0    ), (     0,  0    )
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 3.0
+Library name: iit_stdcells
+Reading "FILL".
+Moving label "vdd" from space to metal1 in cell FILL.
+Moving label "gnd" from space to metal1 in cell FILL.
+Reading "AND2X1".
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+Moving label "Y" from space to metal1 in cell AND2X1.
+Moving label "B" from space to metal1 in cell AND2X1.
+Moving label "vdd" from space to metal1 in cell AND2X1.
+Moving label "gnd" from space to metal1 in cell AND2X1.
+Moving label "A" from space to metal1 in cell AND2X1.
+Reading "AND2X2".
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+Moving label "vdd" from space to metal1 in cell AND2X2.
+Moving label "gnd" from space to metal1 in cell AND2X2.
+Moving label "A" from space to metal1 in cell AND2X2.
+Moving label "B" from space to metal1 in cell AND2X2.
+Moving label "Y" from space to metal1 in cell AND2X2.
+Reading "AOI21X1".
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+Moving label "gnd" from space to metal1 in cell AOI21X1.
+Moving label "vdd" from space to metal1 in cell AOI21X1.
+Moving label "A" from space to metal1 in cell AOI21X1.
+Moving label "B" from space to metal1 in cell AOI21X1.
+Moving label "Y" from space to metal1 in cell AOI21X1.
+Moving label "C" from space to metal1 in cell AOI21X1.
+Reading "AOI22X1".
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+Moving label "gnd" from space to metal1 in cell AOI22X1.
+Moving label "vdd" from space to metal1 in cell AOI22X1.
+Moving label "C" from space to metal1 in cell AOI22X1.
+Moving label "D" from space to metal1 in cell AOI22X1.
+Moving label "Y" from space to metal1 in cell AOI22X1.
+Moving label "A" from space to metal1 in cell AOI22X1.
+Moving label "B" from space to metal1 in cell AOI22X1.
+Reading "BUFX2".
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+Moving label "vdd" from space to metal1 in cell BUFX2.
+Moving label "gnd" from space to metal1 in cell BUFX2.
+Moving label "A" from space to metal1 in cell BUFX2.
+Moving label "Y" from space to metal1 in cell BUFX2.
+Reading "BUFX4".
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+CIF file read warning: Input off lambda grid by 1/2; snapped to grid.
+Warning limit set:  Remaining warnings will not be reported.
+Moving label "vdd" from space to metal1 in cell BUFX4.
+Moving label "gnd" from space to metal1 in cell BUFX4.
+Moving label "A" from space to metal1 in cell BUFX4.
+Moving label "Y" from space to metal1 in cell BUFX4.
+Reading "DFFNEGX1".
+Moving label "CLK" from space to metal1 in cell DFFNEGX1.
+Moving label "vdd" from space to metal1 in cell DFFNEGX1.
+Moving label "D" from space to metal1 in cell DFFNEGX1.
+Moving label "gnd" from space to metal1 in cell DFFNEGX1.
+Moving label "Q" from space to metal1 in cell DFFNEGX1.
+Reading "NOR3X1".
+Moving label "vdd" from space to metal1 in cell NOR3X1.
+Moving label "gnd" from space to metal1 in cell NOR3X1.
+Moving label "B" from space to metal1 in cell NOR3X1.
+Moving label "C" from space to metal1 in cell NOR3X1.
+Moving label "A" from space to metal1 in cell NOR3X1.
+Moving label "Y" from space to metal1 in cell NOR3X1.
+Reading "DFFPOSX1".
+Moving label "vdd" from space to metal1 in cell DFFPOSX1.
+Moving label "D" from space to metal1 in cell DFFPOSX1.
+Moving label "gnd" from space to metal1 in cell DFFPOSX1.
+Moving label "Q" from space to metal1 in cell DFFPOSX1.
+Moving label "CLK" from space to metal1 in cell DFFPOSX1.
+Reading "FAX1".
+Moving label "gnd" from space to metal1 in cell FAX1.
+Moving label "vdd" from space to metal1 in cell FAX1.
+Moving label "A" from space to metal1 in cell FAX1.
+Moving label "B" from space to metal1 in cell FAX1.
+Moving label "C" from space to metal1 in cell FAX1.
+Moving label "YC" from space to metal1 in cell FAX1.
+Moving label "YS" from space to metal1 in cell FAX1.
+Reading "HAX1".
+Moving label "vdd" from space to metal1 in cell HAX1.
+Moving label "gnd" from space to metal1 in cell HAX1.
+Moving label "YC" from space to metal1 in cell HAX1.
+Moving label "A" from space to metal1 in cell HAX1.
+Moving label "B" from space to metal1 in cell HAX1.
+Moving label "YS" from space to metal1 in cell HAX1.
+Reading "INVX1".
+Moving label "A" from space to metal1 in cell INVX1.
+Moving label "Y" from space to metal1 in cell INVX1.
+Moving label "vdd" from space to metal1 in cell INVX1.
+Moving label "gnd" from space to metal1 in cell INVX1.
+Reading "INVX2".
+Moving label "vdd" from space to metal1 in cell INVX2.
+Moving label "gnd" from space to metal1 in cell INVX2.
+Moving label "Y" from space to metal1 in cell INVX2.
+Moving label "A" from space to metal1 in cell INVX2.
+Reading "INVX4".
+Moving label "vdd" from space to metal1 in cell INVX4.
+Moving label "gnd" from space to metal1 in cell INVX4.
+Moving label "Y" from space to metal1 in cell INVX4.
+Moving label "A" from space to metal1 in cell INVX4.
+Reading "INVX8".
+Moving label "vdd" from space to metal1 in cell INVX8.
+Moving label "gnd" from space to metal1 in cell INVX8.
+Moving label "A" from space to metal1 in cell INVX8.
+Moving label "Y" from space to metal1 in cell INVX8.
+Reading "NAND2X1".
+Moving label "vdd" from space to metal1 in cell NAND2X1.
+Moving label "Y" from space to metal1 in cell NAND2X1.
+Moving label "gnd" from space to metal1 in cell NAND2X1.
+Moving label "A" from space to metal1 in cell NAND2X1.
+Moving label "B" from space to metal1 in cell NAND2X1.
+Reading "NAND3X1".
+Moving label "B" from space to metal1 in cell NAND3X1.
+Moving label "vdd" from space to metal1 in cell NAND3X1.
+Moving label "gnd" from space to metal1 in cell NAND3X1.
+Moving label "A" from space to metal1 in cell NAND3X1.
+Moving label "C" from space to metal1 in cell NAND3X1.
+Moving label "Y" from space to metal1 in cell NAND3X1.
+Reading "NOR2X1".
+Moving label "vdd" from space to metal1 in cell NOR2X1.
+Moving label "B" from space to metal1 in cell NOR2X1.
+Moving label "gnd" from space to metal1 in cell NOR2X1.
+Moving label "Y" from space to metal1 in cell NOR2X1.
+Moving label "A" from space to metal1 in cell NOR2X1.
+Reading "OAI21X1".
+Moving label "gnd" from space to metal1 in cell OAI21X1.
+Moving label "vdd" from space to metal1 in cell OAI21X1.
+Moving label "A" from space to metal1 in cell OAI21X1.
+Moving label "B" from space to metal1 in cell OAI21X1.
+Moving label "Y" from space to metal1 in cell OAI21X1.
+Moving label "C" from space to metal1 in cell OAI21X1.
+Reading "OAI22X1".
+Moving label "gnd" from space to metal1 in cell OAI22X1.
+Moving label "vdd" from space to metal1 in cell OAI22X1.
+Moving label "D" from space to metal1 in cell OAI22X1.
+Moving label "C" from space to metal1 in cell OAI22X1.
+Moving label "A" from space to metal1 in cell OAI22X1.
+Moving label "B" from space to metal1 in cell OAI22X1.
+Moving label "Y" from space to metal1 in cell OAI22X1.
+Reading "OR2X1".
+Moving label "Y" from space to metal1 in cell OR2X1.
+Moving label "B" from space to metal1 in cell OR2X1.
+Moving label "vdd" from space to metal1 in cell OR2X1.
+Moving label "gnd" from space to metal1 in cell OR2X1.
+Moving label "A" from space to metal1 in cell OR2X1.
+Reading "OR2X2".
+Moving label "Y" from space to metal1 in cell OR2X2.
+Moving label "B" from space to metal1 in cell OR2X2.
+Moving label "vdd" from space to metal1 in cell OR2X2.
+Moving label "gnd" from space to metal1 in cell OR2X2.
+Moving label "A" from space to metal1 in cell OR2X2.
+Reading "TBUFX1".
+Moving label "vdd" from space to metal1 in cell TBUFX1.
+Moving label "gnd" from space to metal1 in cell TBUFX1.
+Moving label "EN" from space to metal1 in cell TBUFX1.
+Moving label "A" from space to metal1 in cell TBUFX1.
+Moving label "Y" from space to metal1 in cell TBUFX1.
+Reading "TBUFX2".
+Moving label "vdd" from space to metal1 in cell TBUFX2.
+Moving label "gnd" from space to metal1 in cell TBUFX2.
+Moving label "A" from space to metal1 in cell TBUFX2.
+Moving label "EN" from space to metal1 in cell TBUFX2.
+Moving label "Y" from space to metal1 in cell TBUFX2.
+Reading "XOR2X1".
+Moving label "Y" from space to metal1 in cell XOR2X1.
+Moving label "vdd" from space to metal1 in cell XOR2X1.
+Moving label "B" from space to metal1 in cell XOR2X1.
+Moving label "A" from space to metal1 in cell XOR2X1.
+Moving label "gnd" from space to metal1 in cell XOR2X1.
+Reading "MUX2X1".
+Moving label "S" from space to metal1 in cell MUX2X1.
+Moving label "vdd" from space to metal1 in cell MUX2X1.
+Moving label "gnd" from space to metal1 in cell MUX2X1.
+Moving label "Y" from space to metal1 in cell MUX2X1.
+Moving label "A" from space to metal1 in cell MUX2X1.
+Moving label "B" from space to metal1 in cell MUX2X1.
+Reading "XNOR2X1".
+Moving label "A" from space to metal1 in cell XNOR2X1.
+Moving label "B" from space to metal1 in cell XNOR2X1.
+Moving label "gnd" from space to metal1 in cell XNOR2X1.
+Moving label "vdd" from space to metal1 in cell XNOR2X1.
+Moving label "Y" from space to metal1 in cell XNOR2X1.
+Reading "LATCH".
+Moving label "D" from space to metal1 in cell LATCH.
+Moving label "Q" from space to metal1 in cell LATCH.
+Moving label "gnd" from space to metal1 in cell LATCH.
+Moving label "vdd" from space to metal1 in cell LATCH.
+Moving label "CLK" from space to metal1 in cell LATCH.
+Reading "DFFSR".
+Moving label "gnd" from space to metal1 in cell DFFSR.
+Moving label "vdd" from space to metal1 in cell DFFSR.
+Moving label "D" from space to metal1 in cell DFFSR.
+Moving label "S" from space to metal1 in cell DFFSR.
+Moving label "R" from space to metal1 in cell DFFSR.
+Moving label "Q" from space to metal1 in cell DFFSR.
+Moving label "CLK" from space to metal1 in cell DFFSR.
+Reading "CLKBUF1".
+Moving label "A" from space to metal1 in cell CLKBUF1.
+Moving label "vdd" from space to metal1 in cell CLKBUF1.
+Moving label "gnd" from space to metal1 in cell CLKBUF1.
+Moving label "Y" from space to metal1 in cell CLKBUF1.
+Reading "CLKBUF2".
+Moving label "vdd" from space to metal1 in cell CLKBUF2.
+Moving label "gnd" from space to metal1 in cell CLKBUF2.
+Moving label "A" from space to metal1 in cell CLKBUF2.
+Moving label "Y" from space to metal1 in cell CLKBUF2.
+Reading "CLKBUF3".
+Moving label "gnd" from space to metal1 in cell CLKBUF3.
+Moving label "vdd" from space to metal1 in cell CLKBUF3.
+Moving label "A" from space to metal1 in cell CLKBUF3.
+Moving label "Y" from space to metal1 in cell CLKBUF3.
+Reading "iit_stdcells".
+mips: 10000 rects
+mips: 20000 rects
+mips: 30000 rects
+mips: 40000 rects
+mips: 50000 rects
+mips: 60000 rects
+mips: 70000 rects
+mips: 80000 rects
+mips: 90000 rects
+mips: 100000 rects
+mips: 110000 rects
+mips: 120000 rects
+mips: 130000 rects
+mips: 140000 rects
+mips: 150000 rects
+mips: 160000 rects
+mips: 170000 rects
+mips: 180000 rects
+mips: 190000 rects
+mips: 200000 rects
+mips: 210000 rects
+Processing timestamp mismatches: FILL, INVX1, BUFX2, NAND2X1, OAI21X1, CLKBUF1, DFFSR, NOR3X1, NOR2X1, OR2X2, NAND3X1, AND2X2, INVX2, AOI21X1, AOI22X1, OAI22X1, INVX4, INVX8, XOR2X1, XNOR2X1.
