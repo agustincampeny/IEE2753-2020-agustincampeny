@@ -1,0 +1,52 @@
+OpenSTA 2.0.16 b12a89de0a Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Warning: There are 33 input ports missing set_input_delay.
+Warning: There are 66 output ports missing set_output_delay.
+Warning: There are 98 unconstrained endpoints.
+Startpoint: control_1/reg_state/_23_
+            (rising edge-triggered flip-flop clocked by clk)
+Endpoint: memoryAddress[0] (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ control_1/reg_state/_23_/CLK (DFFSR)
+   0.36    0.36 v control_1/reg_state/_23_/Q (DFFSR)
+   0.23    0.58 v control_1/_054_/Y (OR2X1)
+   0.14    0.72 v control_1/_056_/Y (OR2X1)
+   1.66    2.38 ^ control_1/_057_/Y (OAI21X1)
+   0.00    2.38 v datapath_1/mux_iord/_096_/Y (NAND2X1)
+   0.08    2.46 ^ datapath_1/mux_iord/_097_/Y (OAI21X1)
+   0.00    2.46 ^ memoryAddress[0] (out)
+           2.46   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+   0.00   10.00   clock reconvergence pessimism
+  -1.00    9.00   output external delay
+           9.00   data required time
+---------------------------------------------------------
+           9.00   data required time
+          -2.46   data arrival time
+---------------------------------------------------------
+           6.54   slack (MET)
+
+
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power
+----------------------------------------------------------------
+Sequential             5.24e-02   1.81e-03   3.38e-07   5.42e-02  69.1%
+Combinational          1.87e-02   5.54e-03   3.08e-07   2.43e-02  30.9%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  7.11e-02   7.34e-03   6.47e-07   7.84e-02 100.0%
+                          90.6%       9.4%       0.0%
+% 

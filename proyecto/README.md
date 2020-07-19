@@ -15,15 +15,82 @@ Para realizar la síntesis no es necesario conocer el layout de cada celda, ya q
 
 ## Preparación de la síntesis
 
-Se apuntará a realizar un layout utilizando la librería `gscl45nm`, que es parte del proyecto *FreePDK*, y está destinado a un proceso de 45nm del *Semiconductor Research Corporation*. Se escogió esta librería debido a que correspondía al nodo más pequeño de los que venían incluidos con *QFlow*, y un menor largo de canal es siempre preferible en un flujo digital para minimizar el consumo de potencia y maximizar la frecuencia de operación.
+Se apuntará a realizar un layout utilizando la librería `osu018`, que corresponde a un proceso de 180nm. Se escogió esta librería debido a que correspondía a uno de los nodos más pequeños que venían incluidos con *QFlow*, y un menor largo de canal es siempre preferible en un flujo digital para minimizar el consumo de potencia y maximizar la frecuencia de operación.
 
-La librería escogida posee además 10 capas de metal, que es mucho mas que la cantidad de capas en los procesos de *OnSemi* soportados por las librerías OSU. Una mayor cantidad de capas implica una mayor facilidad para las herramientas de placement y routing, y un diseño final más optimizado.
+La librería escogida posee además una mayor cantidad de capas de metal que `osu050`, que es mucho mas que la cantidad de capas en los procesos de *OnSemi* soportados por las librerías OSU. Una mayor cantidad de capas implica una mayor facilidad para las herramientas de placement y routing, y un diseño final más optimizado.
 
 ## Static Timing Analisys
 
+Se definieron los siguientes constraints al momento de realizar *STA*, el que fue realizado utilizando el software *OpenSTA*.
+
+```
+set period 10
+set dfactor 10
+create_clock -name clk -period $period {clk}
+set_case_analysis 0 [get_port rst]
+check_setup
+set_input_delay -clock clk [expr $period/$dfactor] [get_port {memoryOutData}]
+set_output_delay -clock clk [expr $period/$dfactor] [get_port memoryAddress*]
+set_output_delay -clock clk [expr $period/$dfactor] [get_port memoryWriteData*]
+set_output_delay -clock clk [expr $period/$dfactor] [get_port MemRead]
+set_output_delay -clock clk [expr $period/$dfactor] [get_port MemWrite]
+```
+
+En estos se define el reloj, un factor de retraso entre el reloj y las compuertas, y las entradas y salidas del circuito. El resultado del análisis es el siguiente:
+
+```
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ control_1/reg_state/_23_/CLK (DFFSR)
+   0.36    0.36 v control_1/reg_state/_23_/Q (DFFSR)
+   0.23    0.58 v control_1/_054_/Y (OR2X1)
+   0.14    0.72 v control_1/_056_/Y (OR2X1)
+   1.66    2.38 ^ control_1/_057_/Y (OAI21X1)
+   0.00    2.38 v datapath_1/mux_iord/_096_/Y (NAND2X1)
+   0.08    2.46 ^ datapath_1/mux_iord/_097_/Y (OAI21X1)
+   0.00    2.46 ^ memoryAddress[0] (out)
+           2.46   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+   0.00   10.00   clock reconvergence pessimism
+  -1.00    9.00   output external delay
+           9.00   data required time
+---------------------------------------------------------
+           9.00   data required time
+          -2.46   data arrival time
+---------------------------------------------------------
+           6.54   slack (MET)
+```
+
+Observando el valor del `slack`, que es el tiempo que sobra entre que el valor llega a la salida y se genera el flanco de clock, es de 6.54ns, o 7.54ns si no consideramos el retraso añadido. Como el periodo es de 10ns, si se le resta el slack se llega a un valor de periodo mínimo de 3.46ns, o 290MHz en el peor caso, y 2.46ns o 407MHz en el mejor caso (sin retraso de clock).
+
+Se puede notar desde el resultado del STA que el camino de señal que más toma tiempo es aquel que va desde el registro del estado actual del módulo de control hasta el multiplexor que se encuentra en la salida de *MemoryAddress* del *MIPS*. Esto se puede deber a una lógica muy complicada que fue intuida por el sintetizador, y a que se depende de muchas señales (los bits de OpCodes), para llegar a la salida. Una posible mejora es utilizar un ciclo de reloj extra y un registro del OpCode para que se tenga más tiempo para la asignación del valor de `IorR`.
+
+El log de la ejecución se encuentra [aquí](./sta/sta.log).
+
 ## Potencia y area
 
-Por lo general las librerías de celdas estándar incluyen variantes *High-Vt* y *Low-Vt*, en las que la diferencia fundamental entre ambas es un tradeoff entre mejor desempeño y mayor consumo de potencia. Las celdas *Low-Vt* logran un menor voltaje umbral mediante la reducción del grosor del óxido de la compuerta, lo que disminuye el nivel de voltaje para lograr un canal, pero aumenta la corriente de fuga a través de la compuerta. Por otro lado las celdas *High-Vt*, mediante el uso de un óxido de mayor grosor, logran una menor corriente de fuja, sacrificando velocidad de switch de los transistores.
+Utilizando nuevamente *OpenSTA*, se utilizó la directiva `report_power` para obtener la información de consumo de potencia del circuito sintetizado. Esto se realizó primero sin implementar un *clock gate*, y los resultados se presentan a continuación.
+
+```
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power
+----------------------------------------------------------------
+Sequential             5.24e-02   1.81e-03   3.38e-07   5.42e-02  69.1%
+Combinational          1.87e-02   5.54e-03   3.08e-07   2.43e-02  30.9%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  7.11e-02   7.34e-03   6.47e-07   7.84e-02 100.0%
+                          90.6%       9.4%       0.0%
+```
+
+
+
+Por lo general las librerías de celdas estándar incluyen variantes *High-Vt* y *Low-Vt*, en las que la diferencia fundamental entre ambas es un tradeoff entre mejor desempeño y mayor consumo de potencia. Las celdas *Low-Vt* logran un menor voltaje umbral mediante la reducción del grosor del óxido de la compuerta o del largo del canal, lo que disminuye el nivel de voltaje para lograr un canal, pero incrementa la corriente de fuga. Por otro lado las celdas *High-Vt*, mediante el uso de un óxido de mayor grosor, logran una menor corriente de fuja, sacrificando velocidad de switch de los transistores.
 
 La decisión de utilizar una u otra viene de los requerimientos del diseño, si se quiere priorizar desempeño o un bajo uso de potencia. Para este proyecto en particular, si la aplicación fuese para un dispositivo móvil o poco sofisticado, en donde el desempeño no fuese fundamental, convendría utilizar librerías *High-Vt*, y así minimaz lo más posible los consumos de potencia. Otra posibilidad es aprovechar el hecho de que el procesador es del tipo *RISC*, que de por si ya ofrece un menor consumo energético en comparación con arquitecturas *CISC*, y utilizar celdas *Low-Vt* para impulsar el desempeño, y de este modo tener un circuito balanceado entre desempeño y consumo de potencia.
 
